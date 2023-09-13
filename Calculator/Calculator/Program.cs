@@ -37,8 +37,33 @@ namespace Calculator
              * 3) Umozni uzivateli zadavat i desetinna cisla, tedy prekopej kalkulacku tak, aby umela pracovat s floaty
              */
 
-            string num1 = Console.ReadLine();
-            num1.
+            string imput1 = Console.ReadLine();
+            Console.WriteLine("První číslo je " + imput1);
+            int num1 = Convert.ToInt32(imput1);
+            string imput2 = Console.ReadLine();
+            Console.WriteLine("Druhé číslo je " + imput2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
+            int num2 = Convert.ToInt32(imput2);
+            string operace = Console.ReadLine();
+            int result = 0;
+            if (operace == "soucet")
+            {
+                result = num1 + num2;
+            }
+            if (operace == "rozdil")
+            {
+                result = num1 - num2;
+            }
+            if (operace == "nasobeni")
+            {
+                result = num1 * num2;
+            }
+            if (operace == "deleni")
+            {
+                result = num1 / num2;
+            }
+
+            Console.WriteLine("výsledek je " + result);
+
 
 
             Console.ReadKey(); //Toto nech jako posledni radek, aby se program neukoncil ihned, ale cekal na stisk klavesy od uzivatele.
