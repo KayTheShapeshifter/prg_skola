@@ -136,6 +136,32 @@ namespace Calculator
                         Console.WriteLine("Chyba: Musíte zadat platnou operaci");
                         Console.WriteLine("Zadej operaci znovu:");
                         operace = Console.ReadLine();
+
+                        if (operace == "soucet")
+                        {
+                            result = num1 + num2;
+                        }
+                        else if (operace == "rozdil")
+                        {
+                            result = num1 - num2;
+                        }
+                        else if (operace == "nasobeni")
+                        {
+                            result = num1 * num2;
+                        }
+                        else if (operace == "deleni")
+                        {
+                            if (num2 != 0)
+                            {
+                                result = num1 / num2;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Chyba: Nelze dělit nulou.");
+                                Console.ReadKey();
+                                Environment.Exit(1);
+                            }
+                        }
                     }
                 }
 
