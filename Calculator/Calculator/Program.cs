@@ -43,25 +43,55 @@ namespace Calculator
             string input1;
             string input2;
             string operace;
+            string typ;
+
+            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu a) ukončil b) četl do té doby, dokud uživatel nezadá správný imput");
+            typ = Console.ReadLine();
+            
+            if (typ != "a" & typ != "b")
+            {
+                Console.WriteLine("Chyba: Musíte zadat platný vstup.");
+                Console.ReadKey();
+                Environment.Exit(1);
+            }
 
             Console.WriteLine("Zadej první číslo");
             input1 = Console.ReadLine();
 
-            if (!double.TryParse(input1, out num1))
+            while (!double.TryParse(input1, out num1))
             {
-                Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
-                Console.ReadKey(); // Uživatel musí cokoliv zmáčknout než program pojede dál v kódu 
-                Environment.Exit(1); // Ukončí program a indikuje ze to byl error exit (proto 1, nula znamená succesfull execution)
+                if (typ == "a")
+                {
+                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
+                else if (typ == "b")
+                {
+                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                    Console.WriteLine("Zadej první číslo znovu:");
+                    input1 = Console.ReadLine();
+                }
             }
 
             Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
 
             input2 = Console.ReadLine();
-            if (!double.TryParse(input2, out num2))
+            while (!double.TryParse(input2, out num2))
             {
-                Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                Console.ReadKey();
-                Environment.Exit(1);
+                if (typ == "a")
+                {
+                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
+                else if (typ == "b")
+
+                {
+                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                    Console.WriteLine("Zadej druhé číslo znovu:");
+                    input2 = Console.ReadLine();
+                }
             }
             Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
             
@@ -93,17 +123,23 @@ namespace Calculator
                 }
                
             }
-            else
-            {
-                Console.WriteLine("Chyba: Neplatná operace.");
-                Console.ReadKey();
-                Environment.Exit(1);
-            }
-
+            else while (operace != "soucet" & operace != "rozdil" & operace != "nasobeni" & operace != "deleni")
+                {
+                    if (typ == "a")
+                    {
+                        Console.WriteLine("Chyba: Neplatná operace.");
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
+                    else if (typ == "b")
+                    {
+                        Console.WriteLine("Chyba: Musíte zadat platnou operaci");
+                        Console.WriteLine("Zadej operaci znovu:");
+                        operace = Console.ReadLine();
+                    }
+                }
 
             Console.WriteLine("výsledek je " + result);
-
-
 
             Console.ReadKey(); //Toto nech jako posledni radek, aby se program neukoncil ihned, ale cekal na stisk klavesy od uzivatele.
             // credit: chatgpt za try parse (předtím byla funkce convert.toint, ale ta necheckovala jestli zkutecne zadal cislo)
