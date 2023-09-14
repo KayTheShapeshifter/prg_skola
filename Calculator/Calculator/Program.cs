@@ -45,7 +45,7 @@ namespace Calculator
             string operace;
             string typ;
 
-            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu a) ukončil b) četl do té doby, dokud uživatel nezadá správný imput");
+            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu a) ukončil b) četl do té doby, dokud uživatel nezadá správný imput. Zadej 'a' nebo 'b'.");
             typ = Console.ReadLine();
             
             if (typ != "a" & typ != "b")
@@ -131,7 +131,7 @@ namespace Calculator
                         Console.ReadKey();
                         Environment.Exit(1);
                     }
-                    else if (typ == "b")
+                    else if (typ == "b") //zopakuje proces jako předtim pokud je zadanej blbej imput a typ == b, nevim jak to zkratit aby se to neopakovalo
                     {
                         Console.WriteLine("Chyba: Musíte zadat platnou operaci");
                         Console.WriteLine("Zadej operaci znovu:");
