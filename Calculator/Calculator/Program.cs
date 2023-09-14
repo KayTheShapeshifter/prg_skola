@@ -37,36 +37,76 @@ namespace Calculator
              * 3) Umozni uzivateli zadavat i desetinna cisla, tedy prekopej kalkulacku tak, aby umela pracovat s floaty
              */
 
-            string imput1 = Console.ReadLine();
-            Console.WriteLine("První číslo je " + imput1);
-            int num1 = Convert.ToInt32(imput1);
-            string imput2 = Console.ReadLine();
-            Console.WriteLine("Druhé číslo je " + imput2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
-            int num2 = Convert.ToInt32(imput2);
-            string operace = Console.ReadLine();
-            int result = 0;
+            double num1;
+            double num2;
+            double result = 0;
+            string input1;
+            string input2;
+            string operace;
+
+            Console.WriteLine("Zadej první číslo");
+            input1 = Console.ReadLine();
+
+            if (!double.TryParse(input1, out num1))
+            {
+                Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                Console.ReadKey(); // Uživatel musí cokoliv zmáčknout než program pojede dál v kódu 
+                Environment.Exit(1); // Ukončí program a indikuje ze to byl error exit (proto 1, nula znamená succesfull execution)
+            }
+
+            Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
+
+            input2 = Console.ReadLine();
+            if (!double.TryParse(input2, out num2))
+            {
+                Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                Console.ReadKey();
+                Environment.Exit(1);
+            }
+            Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
+            
+            operace = Console.ReadLine();
+
             if (operace == "soucet")
             {
                 result = num1 + num2;
             }
-            if (operace == "rozdil")
+            else if (operace == "rozdil")
             {
                 result = num1 - num2;
             }
-            if (operace == "nasobeni")
+            else if (operace == "nasobeni")
             {
                 result = num1 * num2;
             }
-            if (operace == "deleni")
+            else if (operace == "deleni")
             {
-                result = num1 / num2;
+                if (num2 != 0)
+                {
+                    result = num1 / num2;
+                }
+                else
+                {
+                    Console.WriteLine("Chyba: Nelze dělit nulou.");
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
+               
             }
+            else
+            {
+                Console.WriteLine("Chyba: Neplatná operace.");
+                Console.ReadKey();
+                Environment.Exit(1);
+            }
+
 
             Console.WriteLine("výsledek je " + result);
 
 
 
             Console.ReadKey(); //Toto nech jako posledni radek, aby se program neukoncil ihned, ale cekal na stisk klavesy od uzivatele.
+            // credit: chatgpt za try parse (předtím byla funkce convert.toint, ale ta necheckovala jestli zkutecne zadal cislo)
         }
     }
 }
