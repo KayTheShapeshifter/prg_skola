@@ -24,7 +24,7 @@ namespace Calculator
                 }
                 else
                 {
-                    //vynadej uzivateli
+                    Console.WriteLine("Špatný input");
                     operace = Console.ReadLine();
                 }
             }
@@ -142,7 +142,7 @@ namespace Calculator
                
             }
 
-            else while (operace != ReadOperation())
+            else while () //momentalne useless takze potreba nejak opravit
                 {
                     if (typ == "a")
                     {
