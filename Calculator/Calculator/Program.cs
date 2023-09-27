@@ -18,7 +18,7 @@ namespace Calculator
             string operace = Console.ReadLine();
             while (true)
             {
-                if (operace == "soucet" || "rozdil" || "nasobeni" || deleni)
+                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni")
                 {
                     return operace;
                 }
