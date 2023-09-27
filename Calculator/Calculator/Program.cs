@@ -13,6 +13,24 @@ namespace Calculator
 {
     internal class Program
     {
+        static string ReadOperation()
+        {
+            string operace = Console.ReadLine();
+            while (true)
+            {
+                if (operace == "soucet" || "rozdil" || "nasobeni" || deleni)
+                {
+                    return operace;
+                }
+                else
+                {
+                    //vynadej uzivateli
+                    operace = Console.ReadLine();
+                }
+            }
+
+        }
+
         static void Main(string[] args)
         {
             /*
@@ -52,13 +70,13 @@ namespace Calculator
             {
                 Console.WriteLine("Chyba: Musíte zadat platný vstup.");
                 Console.ReadKey();
-                Environment.Exit(1);
+                Environment.Exit(1); //vypne program
             }
 
             Console.WriteLine("Zadej první číslo");
             input1 = Console.ReadLine();
 
-            while (!double.TryParse(input1, out num1))
+            while (!double.TryParse(input1, out num1)) //prvni while fce byli od chatgpt, poté jsem si je upravil já
             {
                 if (typ == "a")
                 {
@@ -94,9 +112,9 @@ namespace Calculator
                 }
             }
             Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
-            
-            operace = Console.ReadLine();
 
+            operace = ReadOperation();
+            
             if (operace == "soucet")
             {
                 result = num1 + num2;
@@ -123,7 +141,8 @@ namespace Calculator
                 }
                
             }
-            else while (operace != "soucet" & operace != "rozdil" & operace != "nasobeni" & operace != "deleni")
+
+            else while (operace != ReadOperation())
                 {
                     if (typ == "a")
                     {
