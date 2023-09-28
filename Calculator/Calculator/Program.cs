@@ -13,7 +13,7 @@ namespace Calculator
 {
     internal class Program
     {
-        static string ReadOperation()
+        static string ReadOperation(string typ)
         {
             string operace = Console.ReadLine();
             while (true)
@@ -24,11 +24,45 @@ namespace Calculator
                 }
                 else
                 {
-                    Console.WriteLine("Špatný input");
+                    if (typ == "a")
+                    {
+
+                        Console.WriteLine("Chyba: Musíte zadat platnou operaci.");
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
+                    else
+                    Console.WriteLine("Špatný input, zadej číslo znovu");
                     operace = Console.ReadLine();
                 }
             }
-
+        }
+        static double Calculate(double num1, double num2, string operace, string typ) //credit: chatgpt za dani do programu
+        {
+            switch (operace)
+            {
+                case "soucet":
+                    return num1 + num2;
+                case "rozdil":
+                    return num1 - num2;
+                case "nasobeni":
+                    return num1 * num2;
+                case "deleni":
+                    if (num2 != 0)
+                    {
+                        return num1 / num2;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Chyba: Nelze dělit nulou.");
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                        return 0;
+                    }
+                default:
+                    Console.WriteLine("Chyba: Neplatná operace.");
+                    return 0; // Return a default value if the operation is not recognized.
+            }
         }
 
         static void Main(string[] args)
@@ -57,7 +91,7 @@ namespace Calculator
 
             double num1;
             double num2;
-            double result = 0;
+            double result;
             string input1;
             string input2;
             string operace;
@@ -113,81 +147,14 @@ namespace Calculator
             }
             Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
 
-            operace = ReadOperation();
-            
-            if (operace == "soucet")
-            {
-                result = num1 + num2;
-            }
-            else if (operace == "rozdil")
-            {
-                result = num1 - num2;
-            }
-            else if (operace == "nasobeni")
-            {
-                result = num1 * num2;
-            }
-            else if (operace == "deleni")
-            {
-                if (num2 != 0)
-                {
-                    result = num1 / num2;
-                }
-                else
-                {
-                    Console.WriteLine("Chyba: Nelze dělit nulou.");
-                    Console.ReadKey();
-                    Environment.Exit(1);
-                }
-               
-            }
+            operace = ReadOperation(typ);
 
-            else while () //momentalne useless takze potreba nejak opravit
-                {
-                    if (typ == "a")
-                    {
-                        Console.WriteLine("Chyba: Neplatná operace.");
-                        Console.ReadKey();
-                        Environment.Exit(1);
-                    }
-                    else if (typ == "b") //zopakuje proces jako předtim pokud je zadanej blbej imput a typ == b, nevim jak to zkratit aby se to neopakovalo
-                    {
-                        Console.WriteLine("Chyba: Musíte zadat platnou operaci");
-                        Console.WriteLine("Zadej operaci znovu:");
-                        operace = Console.ReadLine();
-
-                        if (operace == "soucet")
-                        {
-                            result = num1 + num2;
-                        }
-                        else if (operace == "rozdil")
-                        {
-                            result = num1 - num2;
-                        }
-                        else if (operace == "nasobeni")
-                        {
-                            result = num1 * num2;
-                        }
-                        else if (operace == "deleni")
-                        {
-                            if (num2 != 0)
-                            {
-                                result = num1 / num2;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Chyba: Nelze dělit nulou.");
-                                Console.ReadKey();
-                                Environment.Exit(1);
-                            }
-                        }
-                    }
-                }
+            result = Calculate(num1, num2, operace, typ);
 
             Console.WriteLine("výsledek je " + result);
 
-            Console.ReadKey(); //Toto nech jako posledni radek, aby se program neukoncil ihned, ale cekal na stisk klavesy od uzivatele.
-            // credit: chatgpt za try parse (předtím byla funkce convert.toint, ale ta necheckovala jestli zkutecne zadal cislo)
+            Console.ReadKey();
         }
+
     }
 }
