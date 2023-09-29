@@ -71,19 +71,68 @@ namespace Calculator
             }
         }
 
+        static string prevodSoustavOperation (double result, string typ) //credit chatgpt za prakticky vsechno tady
+        {
+            int cisloSoustavy;
+
+            Console.WriteLine("Do jaké číselné soustavy chceš převést? Fungují od 2 do 36. Napiš pouze číslo.");
+
+            string inputCisloSoustavy = Console.ReadLine();
+
+            while (!int.TryParse(inputCisloSoustavy, out cisloSoustavy) || cisloSoustavy > 36 || cisloSoustavy < 2) //limituje to ty bases jen na funkcni (2-36)
+            {
+                if (typ == "a")
+                {
+                    Console.WriteLine("Chyba: Musíš zadat platné číslo soustavy.");
+                    Console.ReadKey();
+                    Environment.Exit(1);
+                }
+                else
+                {
+                    Console.WriteLine("Chyba: Musíš zadat platné číslo soustavy.");
+                    Console.WriteLine("Zadej druhé číslo znovu:");
+                    inputCisloSoustavy = Console.ReadLine();
+                }
+            }
+            int celaCastVysledku = (int)result; //konvertuje vysledek na int
+            double desetinnaCastVysledkuDbl = result - celaCastVysledku; //konvertuje desetinnou cast vysledku na double
+
+            StringBuilder resultBuilder = new StringBuilder();
+
+            while (celaCastVysledku > 0)
+            {
+                int digit = celaCastVysledku % cisloSoustavy;
+                char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
+                resultBuilder.Insert(0, digitChar);
+                celaCastVysledku /= cisloSoustavy;
+            }
+
+            if (desetinnaCastVysledkuDbl > 0)
+            {
+                resultBuilder.Append("."); // Add the decimal point for fractional part.
+
+                for (int i = 0; i < 16; i++) // tady se da upravit, kolik destetinnych mist chci aby to umelo
+                {
+                    desetinnaCastVysledkuDbl *= cisloSoustavy;
+                    int digit = (int)desetinnaCastVysledkuDbl;
+                    char digitChar = (char)(digit < 10 ? '0' + digit : 'A' + digit - 10); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
+                    resultBuilder.Append(digitChar);
+                    desetinnaCastVysledkuDbl -= digit;
+                }
+            }
+            return resultBuilder.ToString();
+        }
         static void Main(string[] args)
         {
             double num1;
             double num2;
             double result;
-            int cisloSoustavy;
             string input1;
             string input2;
             string operace;
             string typ;
             string opakovani;
             string prevodSoustavy;
-            string inputCisloSoustavy;
             string konvertovanyVysledek;
 
             Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu:\na) ukončil \nb) četl do té doby, dokud uživatel nezadá správný imput \nZadej 'a' nebo 'b'.");
@@ -147,54 +196,8 @@ namespace Calculator
 
                 if (prevodSoustavy == "ano")
                 {
-                    Console.WriteLine("Do jaké číselné soustavy chceš převést? Fungují od 2 do 36. Napiš pouze číslo.");
+                    konvertovanyVysledek = prevodSoustavOperation(result, typ);
 
-                    inputCisloSoustavy = Console.ReadLine();
-
-                    while (!int.TryParse(inputCisloSoustavy, out cisloSoustavy))
-                    {
-                        if (typ == "a")
-                        {
-                            Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                            Console.ReadKey();
-                            Environment.Exit(1);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                            Console.WriteLine("Zadej druhé číslo znovu:");
-                            inputCisloSoustavy = Console.ReadLine();
-                        }
-                    }
-                    int celaCastVysledku = (int)result; //konvertuje vysledek na int
-                    double desetinnaCastVysledkuDbl = result - celaCastVysledku; //konvertuje desetinnou cast vysledku na double
-
-                    StringBuilder resultBuilder = new StringBuilder();
-
-                    //string konvertovanaCelaCast = Convert.ToString(celaCastVysledku, cisloSoustavy); // Convert integral part to the specified base.
-                    while (celaCastVysledku > 0)
-                    {
-                        int digit = celaCastVysledku % cisloSoustavy;
-                        char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
-                        resultBuilder.Insert(0, digitChar);
-                        celaCastVysledku /= cisloSoustavy;
-                    }
-
-                    if (desetinnaCastVysledkuDbl > 0)
-                    {
-                        resultBuilder.Append("."); // Add the decimal point for fractional part.
-
-                        for (int i = 0; i < 16; i++) // tady se da upravit, kolik destetinnych mist chci aby to umelo
-                        {
-                            desetinnaCastVysledkuDbl *= cisloSoustavy;
-                            int digit = (int)desetinnaCastVysledkuDbl;
-                            char digitChar = (char)(digit < 10 ? '0' + digit : 'A' + digit - 10); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
-                            resultBuilder.Append(digitChar);
-                            desetinnaCastVysledkuDbl -= digit;
-                        }
-                    }
-
-                    konvertovanyVysledek = resultBuilder.ToString();
                     Console.WriteLine(konvertovanyVysledek);
                 }
 
