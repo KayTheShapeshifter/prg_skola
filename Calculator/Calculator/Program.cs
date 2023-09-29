@@ -18,7 +18,7 @@ namespace Calculator
             string operace = Console.ReadLine();
             while (true)
             {
-                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni" || operace == "mocnina" || operace == "odmocnina")
+                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni" || operace == "mocnina" || operace == "odmocnina" || operace == "logaritmus")
                 {
                     return operace;
                 }
@@ -63,6 +63,8 @@ namespace Calculator
                     return Math.Pow(num1, num2);
                 case "odmocnina":
                     return Math.Pow(num1, 1 / num2);
+                case "logaritmus":
+                    return Math.Log(num1, num2);
                 default:
                     Console.WriteLine("Chyba: Neplatná operace.");
                     return 0; // to return 0 tady je, protoze jinak by to hodilo bug ze ne vzdy to da nejaky cislo, jinak je to useless protoze u operace to uz vyhodi vsechny pripady kde operace neni zadna z naprogramovanejch
@@ -80,7 +82,7 @@ namespace Calculator
             string typ;
             string opakovani;
 
-            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu a) ukončil b) četl do té doby, dokud uživatel nezadá správný imput. Zadej 'a' nebo 'b'.");
+            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu:\na) ukončil \nb) četl do té doby, dokud uživatel nezadá správný imput \nZadej 'a' nebo 'b'.");
             typ = Console.ReadLine();
             
             if (typ != "a" & typ != "b")
@@ -130,7 +132,7 @@ namespace Calculator
                     }
                 }
 
-                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni, mocnina, odmocnina)");
+                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber jednu z operací:\nsoucet, rozdil, nasobeni, deleni, mocnina, odmocnina, logaritmus");
                 operace = ReadOperation(typ);
 
                 result = Calculate(num1, num2, operace);
