@@ -37,7 +37,7 @@ namespace Calculator
                 }
             }
         }
-        static double Calculate(double num1, double num2, string operace, string typ) //credit: chatgpt za dani do programu
+        static double Calculate(double num1, double num2, string operace, string typ) //credit: chatgpt
         {
             switch (operace)
             {
@@ -61,7 +61,7 @@ namespace Calculator
                     }
                 default:
                     Console.WriteLine("Chyba: Neplatná operace.");
-                    return 0; // Return a default value if the operation is not recognized.
+                    return 0; // Return a default value if the operation is not recognized. 
             }
         }
 
@@ -96,6 +96,7 @@ namespace Calculator
             string input2;
             string operace;
             string typ;
+            string opakovani;
 
             Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu a) ukončil b) četl do té doby, dokud uživatel nezadá správný imput. Zadej 'a' nebo 'b'.");
             typ = Console.ReadLine();
@@ -106,53 +107,59 @@ namespace Calculator
                 Console.ReadKey();
                 Environment.Exit(1); //vypne program
             }
-
-            Console.WriteLine("Zadej první číslo");
-            input1 = Console.ReadLine();
-
-            while (!double.TryParse(input1, out num1)) //prvni while fce byli od chatgpt, poté jsem si je upravil já
+            do
             {
-                if (typ == "a")
+                Console.WriteLine("Zadej první číslo");
+                input1 = Console.ReadLine();
+
+                while (!double.TryParse(input1, out num1)) //prvni while fce byli od chatgpt, poté jsem si je upravil já
                 {
-                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
-                    Console.ReadKey();
-                    Environment.Exit(1);
+                    if (typ == "a")
+                    {
+                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
+                    else if (typ == "b")
+                    {
+                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                        Console.WriteLine("Zadej první číslo znovu:");
+                        input1 = Console.ReadLine();
+                    }
                 }
-                else if (typ == "b")
+
+                Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
+
+                input2 = Console.ReadLine();
+                while (!double.TryParse(input2, out num2))
                 {
-                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
-                    Console.WriteLine("Zadej první číslo znovu:");
-                    input1 = Console.ReadLine();
+                    if (typ == "a")
+                    {
+                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                        Console.ReadKey();
+                        Environment.Exit(1);
+                    }
+                    else if (typ == "b")
+
+                    {
+                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                        Console.WriteLine("Zadej druhé číslo znovu:");
+                        input2 = Console.ReadLine();
+                    }
                 }
-            }
+                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
 
-            Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
+                operace = ReadOperation(typ);
 
-            input2 = Console.ReadLine();
-            while (!double.TryParse(input2, out num2))
-            {
-                if (typ == "a")
-                {
-                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                    Console.ReadKey();
-                    Environment.Exit(1);
-                }
-                else if (typ == "b")
+                result = Calculate(num1, num2, operace, typ);
 
-                {
-                    Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                    Console.WriteLine("Zadej druhé číslo znovu:");
-                    input2 = Console.ReadLine();
-                }
-            }
-            Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
+                Console.WriteLine("Výsledek je " + result + ".");
 
-            operace = ReadOperation(typ);
+                Console.WriteLine("Přeješ si udělat nový výpočet? zadej \"ano\" pokuď chceš.");
+                opakovani = Console.ReadLine();
 
-            result = Calculate(num1, num2, operace, typ);
-
-            Console.WriteLine("výsledek je " + result);
-
+            } while (opakovani == "ano");
+           
             Console.ReadKey();
         }
 
