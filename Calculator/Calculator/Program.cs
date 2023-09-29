@@ -76,11 +76,15 @@ namespace Calculator
             double num1;
             double num2;
             double result;
+            int cisloSoustavy;
             string input1;
             string input2;
             string operace;
             string typ;
             string opakovani;
+            string prevodSoustavy;
+            string inputCisloSoustavy;
+            string konvertovanyVysledek;
 
             Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu:\na) ukončil \nb) četl do té doby, dokud uživatel nezadá správný imput \nZadej 'a' nebo 'b'.");
             typ = Console.ReadLine();
@@ -113,8 +117,8 @@ namespace Calculator
                 }
 
                 Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
-
                 input2 = Console.ReadLine();
+
                 while (!double.TryParse(input2, out num2))
                 {
                     if (typ == "a")
@@ -137,6 +141,62 @@ namespace Calculator
 
                 result = Calculate(num1, num2, operace);
                 Console.WriteLine("Výsledek je " + result + ".");
+
+                Console.WriteLine("Přeješ si konvertovat výsledek do jiné číselné soustavy? Napiš \"ano\" pokud chceš, jinak odentruj.");
+                prevodSoustavy = Console.ReadLine();
+
+                if (prevodSoustavy == "ano")
+                {
+                    Console.WriteLine("Do jaké číselné soustavy chceš převést? Fungují od 2 do 36. Napiš pouze číslo.");
+
+                    inputCisloSoustavy = Console.ReadLine();
+
+                    while (!int.TryParse(inputCisloSoustavy, out cisloSoustavy))
+                    {
+                        if (typ == "a")
+                        {
+                            Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                            Console.ReadKey();
+                            Environment.Exit(1);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                            Console.WriteLine("Zadej druhé číslo znovu:");
+                            inputCisloSoustavy = Console.ReadLine();
+                        }
+                    }
+                    int celaCastVysledku = (int)result; //konvertuje vysledek na int
+                    double desetinnaCastVysledkuDbl = result - celaCastVysledku; //konvertuje desetinnou cast vysledku na double
+
+                    StringBuilder resultBuilder = new StringBuilder();
+
+                    //string konvertovanaCelaCast = Convert.ToString(celaCastVysledku, cisloSoustavy); // Convert integral part to the specified base.
+                    while (celaCastVysledku > 0)
+                    {
+                        int digit = celaCastVysledku % cisloSoustavy;
+                        char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
+                        resultBuilder.Insert(0, digitChar);
+                        celaCastVysledku /= cisloSoustavy;
+                    }
+
+                    if (desetinnaCastVysledkuDbl > 0)
+                    {
+                        resultBuilder.Append("."); // Add the decimal point for fractional part.
+
+                        for (int i = 0; i < 16; i++) // tady se da upravit, kolik destetinnych mist chci aby to umelo
+                        {
+                            desetinnaCastVysledkuDbl *= cisloSoustavy;
+                            int digit = (int)desetinnaCastVysledkuDbl;
+                            char digitChar = (char)(digit < 10 ? '0' + digit : 'A' + digit - 10); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
+                            resultBuilder.Append(digitChar);
+                            desetinnaCastVysledkuDbl -= digit;
+                        }
+                    }
+
+                    konvertovanyVysledek = resultBuilder.ToString();
+                    Console.WriteLine(konvertovanyVysledek);
+                }
 
                 Console.WriteLine("Přeješ si udělat nový výpočet? zadej \"ano\" pokuď chceš. Pokuď ne stiskni 2x enter a program se ukončí");
                 opakovani = Console.ReadLine();
