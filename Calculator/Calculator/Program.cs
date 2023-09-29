@@ -18,7 +18,7 @@ namespace Calculator
             string operace = Console.ReadLine();
             while (true)
             {
-                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni")
+                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni" || operace == "mocnina" || operace == "odmocnina")
                 {
                     return operace;
                 }
@@ -37,7 +37,7 @@ namespace Calculator
                 }
             }
         }
-        static double Calculate(double num1, double num2, string operace, string typ) //credit: chatgpt
+        static double Calculate(double num1, double num2, string operace) //credit: chatgpt za default a convertnuti else ifů do switche
         {
             switch (operace)
             {
@@ -59,6 +59,10 @@ namespace Calculator
                         Environment.Exit(1);
                         return 0;
                     }
+                case "mocnina":
+                    return Math.Pow(num1, num2);
+                case "odmocnina":
+                    return Math.Pow(num1, 1 / num2);
                 default:
                     Console.WriteLine("Chyba: Neplatná operace.");
                     return 0; // to return 0 tady je, protoze jinak by to hodilo bug ze ne vzdy to da nejaky cislo, jinak je to useless protoze u operace to uz vyhodi vsechny pripady kde operace neni zadna z naprogramovanejch
@@ -126,13 +130,13 @@ namespace Calculator
                     }
                 }
 
-                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni)");
+                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber operaci (soucet, rozdil, nasobeni, deleni, mocnina, odmocnina)");
                 operace = ReadOperation(typ);
 
-                result = Calculate(num1, num2, operace, typ);
+                result = Calculate(num1, num2, operace);
                 Console.WriteLine("Výsledek je " + result + ".");
 
-                Console.WriteLine("Přeješ si udělat nový výpočet? zadej \"ano\" pokuď chceš.");
+                Console.WriteLine("Přeješ si udělat nový výpočet? zadej \"ano\" pokuď chceš. Pokuď ne stiskni 2x enter a program se ukončí");
                 opakovani = Console.ReadLine();
 
             } while (opakovani == "ano");
