@@ -75,7 +75,7 @@ namespace Calculator
         {
             int cisloSoustavy;
 
-            Console.WriteLine("Do jaké číselné soustavy chceš převést? Fungují od 2 do 36. Napiš pouze číslo.");
+            Console.WriteLine("Do jaké číselné soustavy chceš převést? \nFungují soustavy od 2 do 36. Napiš pouze číslo. \nNefunguje u velice velkých čísel z důvodu limitací INTu");
 
             string inputCisloSoustavy = Console.ReadLine();
 
@@ -115,7 +115,7 @@ namespace Calculator
                 {
                     desetinnaCastVysledkuDbl *= cisloSoustavy;
                     int digit = (int)desetinnaCastVysledkuDbl;
-                    char digitChar = (char)(digit < 10 ? '0' + digit : 'A' + digit - 10); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
+                    char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10)); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
                     resultBuilder.Append(digitChar);
                     desetinnaCastVysledkuDbl -= digit;
                 }
@@ -144,7 +144,8 @@ namespace Calculator
                 Console.ReadKey();
                 Environment.Exit(1); //vypne program
             }
-            do
+
+            do //tohle do-while umoznuje nekolikrat opakovat vypocet
             {
                 Console.WriteLine("Zadej první číslo");
                 input1 = Console.ReadLine();
@@ -194,10 +195,9 @@ namespace Calculator
                 Console.WriteLine("Přeješ si konvertovat výsledek do jiné číselné soustavy? Napiš \"ano\" pokud chceš, jinak odentruj.");
                 prevodSoustavy = Console.ReadLine();
 
-                if (prevodSoustavy == "ano")
+                if (prevodSoustavy == "ano") //logika pro konverzi
                 {
                     konvertovanyVysledek = prevodSoustavOperation(result, typ);
-
                     Console.WriteLine(konvertovanyVysledek);
                 }
 
