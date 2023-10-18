@@ -26,7 +26,6 @@ namespace Calculator
                 {
                     if (typ == "a")
                     {
-
                         Console.WriteLine("Chyba: Musíte zadat platnou operaci.");
                         Console.ReadKey();
                         Environment.Exit(1);
@@ -94,14 +93,14 @@ namespace Calculator
                     inputCisloSoustavy = Console.ReadLine();
                 }
             }
-            int celaCastVysledku = (int)result; //konvertuje vysledek na int
+            long celaCastVysledku = (int)result; //konvertuje vysledek na int
             double desetinnaCastVysledkuDbl = result - celaCastVysledku; //konvertuje desetinnou cast vysledku na double
 
             StringBuilder resultBuilder = new StringBuilder();
 
             while (celaCastVysledku > 0)
             {
-                int digit = celaCastVysledku % cisloSoustavy;
+                long digit = celaCastVysledku % cisloSoustavy;
                 char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
                 resultBuilder.Insert(0, digitChar);
                 celaCastVysledku /= cisloSoustavy;
@@ -178,7 +177,6 @@ namespace Calculator
                         Environment.Exit(1);
                     }
                     else if (typ == "b")
-
                     {
                         Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
                         Console.WriteLine("Zadej druhé číslo znovu:");
@@ -188,7 +186,6 @@ namespace Calculator
 
                 Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber jednu z operací:\nsoucet, rozdil, nasobeni, deleni, mocnina, odmocnina, logaritmus");
                 operace = ReadOperation(typ);
-
                 result = Calculate(num1, num2, operace);
                 Console.WriteLine("Výsledek je " + result + ".");
 
