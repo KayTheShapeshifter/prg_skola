@@ -34,9 +34,11 @@ namespace SearchPlayground
             int upper = array.Length - 1;
             int lower = 0;
             int mid = 0;
+            int count = 0;
             while (lower <= upper)
             {
                 mid = (upper + lower) / 2;
+                count++;
                 if (array[mid] != elementToSearch)
                 {
                     if (array[mid - 1] < elementToSearch)
@@ -50,11 +52,10 @@ namespace SearchPlayground
                 }
                 else
                 {
+                    Console.Write("Udělal jsem " + count + " dělení");
                     return mid;
                 }
-                
             }
-
 
 
             /*
