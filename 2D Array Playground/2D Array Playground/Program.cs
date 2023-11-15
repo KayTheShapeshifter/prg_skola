@@ -83,10 +83,40 @@ namespace _2D_Array_Playground
             //TODO 5: Prohoď n-tý řádek v poli s m-tým řádkem (n je dáno proměnnou nRowSwap, m mRowSwap) a vypiš celé pole do konzole po prohození.
             int nRowSwap = 0;
             int mRowSwap = 1;
+            for (int j = 0; j < board.GetLength(1); j++)
+            {
+                int temp = board[nRowSwap, j];
+                board[mRowSwap, j] = board[nRowSwap, j];
+                board[nRowSwap, j] = temp;
+            }
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    Console.Write(board[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n");
 
             //TODO 6: Prohoď n-tý sloupec v poli s m-tým sloupcem (n je dáno proměnnou nColSwap, m mColSwap) a vypiš celé pole do konzole po prohození.
             int nColSwap = 0;
             int mColSwap = 1;
+            for (int j = 0; j < board.GetLength(1); j++)
+            {
+                int temp = board[j, nColSwap];
+                board[j, mColSwap] = board[nRowSwap, j];
+                board[j, nColSwap] = temp;
+            }
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    Console.Write(board[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n");
 
             //TODO 7: Otoč pořadí prvků na hlavní diagonále (z levého horního rohu do pravého dolního rohu) a vypiš celé pole do konzole po otočení.
 
