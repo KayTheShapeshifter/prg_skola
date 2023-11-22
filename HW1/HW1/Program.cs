@@ -251,7 +251,7 @@ namespace HW1
             }
             writeArrayIntoConsole(map);
         }
-        static void writeArrayIntoConsole(int[,] map)
+        static void writeArrayIntoConsole(int[,] map) //z array playground
         {
             for (int i = 0; i < map.GetLength(0); i++) //pres radky
             {
@@ -383,7 +383,7 @@ namespace HW1
             {
                 for (int j = 0; j < originalMap.GetLength(1); j++)
                 {
-                    map[i, j] = originalMap[j, i];
+                    map[j, i] = originalMap[i, j];
                 }
             }
             writeArrayIntoConsole(map);
@@ -405,7 +405,7 @@ namespace HW1
                 "\n6 - vynásob prvky v matici číslem" +
                 "\n7 - sčítání / odečítání matic" +
                 "\n8 - transpozice podle hlavní diagonály" +
-                "\n9 - násobení matice maticí" +
+                "\n9 - násobení matice maticí (ještě nenaimplementováno)" +
                 "\n10 - udělej úkol z KSP 36-1-3 výšlap. https://ksp.mff.cuni.cz/h/ulohy/36/zadani1.html#task-36-1-3");
 
             int operationInt = int.Parse(Console.ReadLine());
