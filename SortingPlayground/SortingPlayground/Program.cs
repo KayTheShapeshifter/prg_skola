@@ -21,6 +21,19 @@ namespace SortingPlayground
             /*
              * TODO: Naimplementuj bubble sort.
              */
+            
+            for (int i = 0; i < sortedArray.Length - 1; i++)
+            {
+                for (int j = 0; j < sortedArray.Length - 1; j++)
+                {
+                    if (sortedArray[j] > sortedArray[j + 1])
+                    {
+                        int temp = sortedArray[j + 1];
+                        sortedArray[j + 1] = sortedArray[j];
+                        sortedArray[j] = temp;
+                    }
+                }
+            }
             return sortedArray;
         }
 
@@ -30,6 +43,18 @@ namespace SortingPlayground
             /*
              * TODO: Naimplementuj selection sort.
              */
+            int max = 0;
+            for (int i = 0; i < sortedArray.Length; i++)
+            {
+                for (int j = 0; j < sortedArray.Length - i; j++)
+                {
+                    if (max < sortedArray[i + j])
+                    {
+                        max = sortedArray[i + j];
+                    }
+                }
+                sortedArray[sortedArray.Length - i]  = max;
+            }
             return sortedArray;
         }
 
@@ -39,14 +64,17 @@ namespace SortingPlayground
             /*
              * TODO: Naimplementuj insertion sort.
              */
-            for (int i = 1; i < sortedArray.Length - 1; i++)
+            int n = sortedArray.Length;
+            for (int i = 1; i < n; i++)
             {
-                while (sortedArray[i] > sortedArray[i+1])
+                int key = sortedArray[i];
+                int j = i - 1;
+                while (j >= 0 && sortedArray[j] > key)
                 {
-                    int tempSwap = sortedArray[i];
-                    sortedArray[i] = sortedArray[i+1];
-                    sortedArray[i+1] = tempSwap;
+                    sortedArray[j+1] = sortedArray[j];
+                    j = j - 1;
                 }
+                sortedArray[j + 1] = key;
             }
             return sortedArray;
         }
