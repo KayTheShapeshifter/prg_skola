@@ -66,7 +66,37 @@ namespace ClassPlayground
     {
         static void Main(string[] args)
         {
-            Console.ReadKey();
+            char operation;
+            recrangle rectangle1 = new recrangle();
+            Console.WriteLine("zadej výšku");
+            rectangle1.width = int.Parse(Console.ReadLine());
+            Console.WriteLine("zadej délku");
+            rectangle1.height = int.Parse(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("chceš - 1. spočítat obsah; 2. spočítat poměr stran; 3. zkontrolovat, jestli obdelník obsahuje bod");
+                switch (int.Parse(Console.ReadLine()))
+                {
+                    case 1:
+                        rectangle1.calculateArea();
+                        break;
+                    case 2:
+                        rectangle1.calculateAspectRatio();
+                        break;
+                    case 3:
+                        Console.WriteLine("zadej x");
+                        int x = int.Parse(Console.ReadLine());
+                        Console.WriteLine("zadej y");
+                        int y = int.Parse(Console.ReadLine());
+                        rectangle1.containsPoint(x, y);
+                        break;
+                    default:
+                        break;
+                }
+                Console.WriteLine("chceš zkusit jinou operaci? y/n");
+                operation = Convert.ToChar(Console.ReadLine());
+            } while (operation != 'n');
+        Console.ReadKey();
         }
     }
 }
