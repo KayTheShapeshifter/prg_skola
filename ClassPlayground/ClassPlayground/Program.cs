@@ -96,6 +96,7 @@ namespace ClassPlayground
                 Console.WriteLine("chceš zkusit jinou operaci? y/n");
                 operation = Convert.ToChar(Console.ReadLine());
             } while (operation != 'n');
+
         Console.ReadKey();
         }
     }
