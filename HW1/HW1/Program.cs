@@ -103,9 +103,9 @@ namespace HW1
                 }
             }
             currentPath.Add((Sx, Sy));
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++) //iteruju přes všechny č možné směry
             {
-                int newX = Sx + dx[i];
+                int newX = Sx + dx[i]; // Sx a Sy jsou v tomto kontextu startovní body poslední iterace
                 int newY = Sy + dy[i];
                 if (newX >= 0 && newY >= 0 && newX < map.GetLength(0) && newY < map.GetLength(1))
                 {
@@ -189,10 +189,10 @@ namespace HW1
         }
         static void swapDiagonal(int[,] map)
         {
-            for (int i = 0; i < map.GetLength(0) / 2; i++) //pres radky/sloupce, je to jedno
+            for (int i = 0; i < map.GetLength(0) / 2; i++) //lomeno 2 protože bych prohodil diagonálu spátky, kdyby to tam nebylo (nakonec by vypadala jako na začátku)
             {
                 int temp = map[i, i];
-                int coordToSwap = map.GetLength(0) - 1 - i;
+                int coordToSwap = map.GetLength(0) - 1 - i; // iteruju tímhle přes diagonálu
                 map[i, i] = map[coordToSwap, coordToSwap];
                 map[coordToSwap, coordToSwap] = temp;
             }
@@ -310,18 +310,7 @@ namespace HW1
                     map = new int[length, height];
 
                     Console.WriteLine("Pole o délce {0} a výšce {1} bylo vytvořeno.", length, height);
-                    /*
-                    string[] startCoordinates = secondLine.Split(' ');
 
-                    int Sx = int.Parse(startCoordinates[0]);
-                    int Sy = int.Parse(startCoordinates[1]);
-                    int Cx = int.Parse(startCoordinates[2]);
-                    int Cy = int.Parse(startCoordinates[3]);
-                    // Display Sx and Sy
-                    Console.WriteLine("Sx " + Sx + ", Sy: " + Sy);
-                    // Display Cx and Cy
-                    Console.WriteLine("Cx: {0}, Cy: {1}", Cx, Cy);
-                    */
                     for (int i = 0; i < length; i++)
                     {
                         string tempValues = File.ReadLines(file).Skip(i + 1).First(); // pokud budu implementovat i to z KSP tak je potřeba přepsat i+1 na i+2 (skopiju řádky v tom texťáku)
