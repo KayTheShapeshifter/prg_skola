@@ -14,14 +14,14 @@ namespace Game1
         public static int playableAreaSize = 16; //size of the "road"
         public static int InitleftBarierIndex = mapRow.Length / 2 - playableAreaSize / 2;
         public static int mapCapacity = 20;
-        public static (List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map,int playerPosition)
+        public static(List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map,int playerPosition)
         {
             Random random = new Random();
             int tempIndex = 0;
             int tempDirection = 0;
             if (leftBarierIndex == 1) //it could go off the map to the left if this wasnt here (if the border is so far left that the next step could make it go off it, then its prohibited to go left)
             {
-                tempDirection = random.Next(2, 4);
+                tempDirection = random.Next(2, 4); 
             }
             else if (leftBarierIndex == mapRow.Length - playableAreaSize - 2)
             {
@@ -137,19 +137,30 @@ namespace Game1
         static void Main(string[] args)
         {
             int playerPosition = mapRow.Length / 2;
-            List<char[]> map = new List<char[]>(mapCapacity);
+            //List<char[]> map = new List<char[]>(mapCapacity);
             bool varCollisionDetection = false;
-
+            Map map1 = new Map();
+ 
             while (varCollisionDetection == false) //always true now
             {
-                while (map.Count <= mapCapacity)
+                while (map1.map.Count <= mapCapacity)
                 {
-                    (map, InitleftBarierIndex, playerPosition) = mapGeneration(mapRow, InitleftBarierIndex, playableAreaSize, map, playerPosition);
+                    (map1.map, map1.leftBarrierIndex, playerPosition) = mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition);
                 }
-                printMap(map);
-                varCollisionDetection = collisionDetection(playerPosition, map) ;
+                printMap(map1.map);
+                map1.map.RemoveAt(0);
+                varCollisionDetection = collisionDetection(playerPosition, map1.map) ;
             }
             Console.ReadKey();
         }
+    }
+    internal class Map
+    {
+        public static char[] mapRow = new char[128]; //size of row
+        public static int playableAreaSize = 16; //size of the "road"
+        public int leftBarrierIndex = mapRow.Length / 2 - playableAreaSize / 2;
+        public int mapCapacity = 20;
+        public List<char[]> map = new List<char[]>();
+        public Random random = new Random();
     }
 }
