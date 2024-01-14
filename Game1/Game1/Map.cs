@@ -8,9 +8,10 @@ namespace Game1
 {
     internal class Map
     {
-        public static char[] mapRow = new char[128]; //size of row
+        public static int mapSize = 128;
+        public char[] mapRow = new char[mapSize]; //size of row
         public static int playableAreaSize = 16; //size of the "road"
-        public int leftBarrierIndex = mapRow.Length / 2 - playableAreaSize / 2;
+        public int leftBarrierIndex = mapSize / 2 - playableAreaSize / 2; //mapRow.lenght, akorat to tam nemuzu napsat protoze mapRow musi byt static
         public int mapCapacity = 20;
         public List<char[]> map = new List<char[]>();
         public Random random = new Random();

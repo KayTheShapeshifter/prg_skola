@@ -10,6 +10,7 @@ namespace Game1
 {
     internal class Program
     {
+        public static int mapRowSize = 128;
         public static char[] mapRow = new char[128]; //size of row
         public static int playableAreaSize = 16; //size of the "road"
         public static bool collisionDetection(int playerPosition, List<char[]> map)
@@ -33,7 +34,12 @@ namespace Game1
             {
                 while (map1.map.Count <= map1.mapCapacity)
                 {
-                    (map1.map, map1.leftBarrierIndex, playerPosition) = map1.mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition, map1);
+                    char[] map_Row = new char[128];
+                    var temp = map1.mapGeneration(map_Row, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition, map1);
+                    map1.map = temp.Item1;
+                    map1.leftBarrierIndex = temp.Item2;
+                    playerPosition = temp.Item3;
+                    //(map1.map, map1.leftBarrierIndex, playerPosition)
                 }
                 map1.printMap(map1.map);
                 map1.map.RemoveAt(0);
