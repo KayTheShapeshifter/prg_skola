@@ -14,18 +14,18 @@ namespace Game1
         public static int playableAreaSize = 16; //size of the "road"
         public static int InitleftBarierIndex = mapRow.Length / 2 - playableAreaSize / 2;
         public static int mapCapacity = 20;
-        public static(List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map,int playerPosition)
+        public static(List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map,int playerPosition, Map map1)
         {
             Random random = new Random();
             int tempIndex = 0;
             int tempDirection = 0;
             if (leftBarierIndex == 1) //it could go off the map to the left if this wasnt here (if the border is so far left that the next step could make it go off it, then its prohibited to go left)
             {
-                tempDirection = random.Next(2, 4); 
+                tempDirection = map1.random.Next(2, 4); 
             }
             else if (leftBarierIndex == mapRow.Length - playableAreaSize - 2)
             {
-                int tempPlaceholder = random.Next(1, 3);
+                int tempPlaceholder = map1.random.Next(1, 3);
                 if (tempPlaceholder == 1)
                 {
                     tempDirection = 1;
@@ -37,7 +37,7 @@ namespace Game1
             }
             else
             {
-                tempDirection = random.Next(1, 4);
+                tempDirection = map1.random.Next(1, 4);
             }
 
             switch (tempDirection)
@@ -115,6 +115,7 @@ namespace Game1
         }
         public static void printMap(List<char[]> map)
         {
+            Console.Clear();
             foreach (var tempMapRow in map)
             {
                 for (int j = 0; j < tempMapRow.Length; j++)
@@ -123,6 +124,7 @@ namespace Game1
                 }
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
         public static bool collisionDetection(int playerPosition, List<char[]> map)
         {
@@ -145,7 +147,7 @@ namespace Game1
             {
                 while (map1.map.Count <= mapCapacity)
                 {
-                    (map1.map, map1.leftBarrierIndex, playerPosition) = mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition);
+                    (map1.map, map1.leftBarrierIndex, playerPosition) = mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition, map1);
                 }
                 printMap(map1.map);
                 map1.map.RemoveAt(0);
