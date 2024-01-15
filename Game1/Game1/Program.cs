@@ -10,120 +10,9 @@ namespace Game1
 {
     internal class Program
     {
+        public static int mapRowSize = 128;
         public static char[] mapRow = new char[128]; //size of row
         public static int playableAreaSize = 16; //size of the "road"
-        public static int InitleftBarierIndex = mapRow.Length / 2 - playableAreaSize / 2;
-        public static int mapCapacity = 20;
-        public static (List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map,int playerPosition)
-        {
-            Random random = new Random();
-            int tempIndex = 0;
-            int tempDirection = 0;
-            if (leftBarierIndex == 1) //it could go off the map to the left if this wasnt here (if the border is so far left that the next step could make it go off it, then its prohibited to go left)
-            {
-                tempDirection = random.Next(2, 4);
-            }
-            else if (leftBarierIndex == mapRow.Length - playableAreaSize - 2)
-            {
-                int tempPlaceholder = random.Next(1, 3);
-                if (tempPlaceholder == 1)
-                {
-                    tempDirection = 1;
-                }
-                else
-                {
-                    tempDirection = 3;
-                }
-            }
-            else
-            {
-                tempDirection = random.Next(1, 4);
-            }
-
-            switch (tempDirection)
-            {
-                case 1: //left
-                    leftBarierIndex--;
-                    for (int i = 0; i < leftBarierIndex - 1; i++) //left grass generation
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '/'; //border gen.
-                    tempIndex++;
-                    for (int i = 0; i < playableAreaSize; i++) //road gen
-                    {
-                        mapRow[tempIndex] = ' ';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '/'; //border gen
-                    tempIndex++;
-                    for (int i = 0; i < mapRow.Length - (leftBarierIndex + playableAreaSize + 1); i++) //right grass gen
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    playerPosition--;
-                    break;
-                case 2: //right
-                    leftBarierIndex++;
-                    for (int i = 0; i < leftBarierIndex - 1; i++) //left grass generation
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '\\'; //border gen.
-                    tempIndex++;
-                    for (int i = 0; i < playableAreaSize; i++) //road gen
-                    {
-                        mapRow[tempIndex] = ' ';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '\\'; //border gen
-                    tempIndex++;
-                    for (int i = 0; i < mapRow.Length - (leftBarierIndex + playableAreaSize + 1); i++) //right grass gen
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    playerPosition++;
-                    break;
-                default://center
-                    for (int i = 0; i < leftBarierIndex - 1; i++) //left grass generation
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '│'; //border gen.
-                    tempIndex++;
-                    for (int i = 0; i < playableAreaSize; i++) //road gen
-                    {
-                        mapRow[tempIndex] = ' ';
-                        tempIndex++;
-                    }
-                    mapRow[tempIndex] = '│'; //border gen
-                    tempIndex++;
-                    for (int i = 0; i < mapRow.Length - (leftBarierIndex + playableAreaSize + 1); i++) //right grass gen
-                    {
-                        mapRow[tempIndex] = '#';
-                        tempIndex++;
-                    }
-                    break;
-            }
-            map.Add(mapRow);
-            return (map, leftBarierIndex, playerPosition);
-        }
-        public static void printMap(List<char[]> map)
-        {
-            foreach (var tempMapRow in map)
-            {
-                for (int j = 0; j < tempMapRow.Length; j++)
-                {
-                    Console.Write(tempMapRow[j]);
-                }
-                Console.WriteLine();
-            }
-        }
         public static bool collisionDetection(int playerPosition, List<char[]> map)
         {
             bool collisionDetection = false;
@@ -131,24 +20,30 @@ namespace Game1
             char[] mapRow = map[0];
             if (mapRow[playerPosition] == '/' || mapRow[playerPosition] == '│' || mapRow[playerPosition] == '\\')
             {
-                
+
             }
         }
         static void Main(string[] args)
         {
             int playerPosition = mapRow.Length / 2;
-            List<char[]> map = new List<char[]>(mapCapacity);
+            //List<char[]> map = new List<char[]>(mapCapacity);
             bool varCollisionDetection = false;
+            Map map1 = new Map();
 
             while (varCollisionDetection == false) //always true now
             {
-                while (map.Count <= mapCapacity)
+                while (map1.map.Count <= map1.mapCapacity)
                 {
-                    (map, InitleftBarierIndex, playerPosition) = mapGeneration(mapRow, InitleftBarierIndex, playableAreaSize, map, playerPosition);
+                    char[] map_Row = new char[128];
+                    var temp = map1.mapGeneration(map_Row, map1.leftBarrierIndex, playableAreaSize, map1.map, playerPosition, map1);
+                    map1.map = temp.Item1;
+                    map1.leftBarrierIndex = temp.Item2;
+                    playerPosition = temp.Item3;
+                    //(map1.map, map1.leftBarrierIndex, playerPosition)
                 }
-                printMap(map);
-                map.RemoveAt(0);
-                varCollisionDetection = collisionDetection(playerPosition, map);
+                map1.printMap(map1.map);
+                map1.map.RemoveAt(0);
+                varCollisionDetection = collisionDetection(playerPosition, map1.map);
             }
             Console.ReadKey();
         }
