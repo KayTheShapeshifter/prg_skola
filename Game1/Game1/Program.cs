@@ -29,7 +29,7 @@ namespace Game1
             //List<char[]> map = new List<char[]>(mapCapacity);
             bool varCollisionDetection = false;
             Map map1 = new Map();
-
+ 
             while (varCollisionDetection == false) //always true now
             {
                 while (map1.map.Count <= map1.mapCapacity)
@@ -43,7 +43,7 @@ namespace Game1
                 }
                 map1.printMap(map1.map);
                 map1.map.RemoveAt(0);
-                varCollisionDetection = collisionDetection(playerPosition, map1.map);
+                varCollisionDetection = collisionDetection(playerPosition, map1.map) ;
             }
             Console.ReadKey();
         }
