@@ -147,7 +147,8 @@ namespace Game1
                     (map, InitleftBarierIndex, playerPosition) = mapGeneration(mapRow, InitleftBarierIndex, playableAreaSize, map, playerPosition);
                 }
                 printMap(map);
-                varCollisionDetection = collisionDetection(playerPosition, map) ;
+                map.RemoveAt(0);
+                varCollisionDetection = collisionDetection(playerPosition, map);
             }
             Console.ReadKey();
         }
