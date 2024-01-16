@@ -67,7 +67,7 @@ namespace Game1
             Console.WriteLine("Uhhh, something is happening");
             Thread.Sleep(1000);
             Console.WriteLine("It seems... YOU'RE GETTING RICKROLLED");
-            Thread.Sleep(500);
+            Thread.Sleep(1200);
             rickroll();
         }
         public static void rickroll()
