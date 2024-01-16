@@ -16,32 +16,32 @@ namespace Game1
         public static int playableAreaSize = 16; //size of the "road"
 
         static void Main(string[] args) 
-        {           
+        {
+            GameLoop.startGame();
             Map map1 = new Map();
-            //List<char[]> map = new List<char[]>(mapCapacity);
-            bool varCollisionDetection = false;
             GameLoop gameLoop = new GameLoop();
+            bool varCollisionDetection = false;
+            int scoreCounter = 0;
 
             while (varCollisionDetection == false) //always true now
             {
-                gameLoop.playerPosition = gameLoop.runGame(gameLoop.playerPosition);
+                gameLoop.playerPosition = gameLoop.playerMovement(gameLoop.playerPosition);
                 while (map1.map.Count <= map1.mapCapacity)
                 {
-                    char[] map_Row = new char[128];
-                    var temp = map1.mapGeneration(map_Row, map1.leftBarrierIndex, playableAreaSize, map1.map, gameLoop.playerPosition, map1);
+                    char[] mapRow = new char[128];
+                    var temp = map1.mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, gameLoop.playerPosition, map1);
                     map1.map = temp.Item1;
                     map1.leftBarrierIndex = temp.Item2;
                     gameLoop.playerPosition = temp.Item3;
-                    //(map1.map, map1.leftBarrierIndex, playerPosition)
                 }
                 map1.printMap(map1.map, gameLoop);
                 map1.map.RemoveAt(0);
-                varCollisionDetection = gameLoop.collisionDetection(gameLoop.playerPosition, map1.map) ;
+                varCollisionDetection = gameLoop.collisionDetection(gameLoop.playerPosition, map1.map);
+                scoreCounter++;
                 Thread.Sleep(100);
             }
-
-            GameLoop.rickroll(); //haha git gud
-
+            gameLoop.endgame(scoreCounter, map1);
+            
             Console.ReadKey();
         }
     }

@@ -14,30 +14,20 @@ namespace Game1
         public int playerPosition = Program.mapRowSize / 2;
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int key); //As i understand it, i imported a dll that was written in C++ and now im using it in C#
-        public int runGame(int playerPosition)
+        public int playerMovement(int playerPosition)
         {
-            /*if (Console.KeyAvailable) //checks íf a key is pressed
-            {
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                if (keyInfo.Key == ConsoleKey.LeftArrow)
-                {
-                    playerPosition--;
-                }
-                if (keyInfo.Key == ConsoleKey.RightArrow)
-                {
-                    playerPosition++;
-                }
-            }
-            */
+            //char playerDirection = ↓; 
             if ((GetAsyncKeyState(0x25) & 0x8000) > 0) // GetAsyncKeyState returns int, no bool so it has to be > 0 ; left arrow press condition ; https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate
             {
                 playerPosition--;
+                //playerDirection = ↙;
             }
-            if ((GetAsyncKeyState(0x27) & 0x8000) > 0) //there is no else, because user can press both right and left arrow at the same time
+            if ((GetAsyncKeyState(0x27) & 0x8000) > 0) //right arrow ; there is no else, because user can press both right and left arrow at the same time
             {
                 playerPosition++;
+                //playerDirection =↘;
             }
-                 
+
             return playerPosition;
         }
         public bool collisionDetection(int playerPosition, List<char[]> map)
@@ -49,6 +39,31 @@ namespace Game1
                 collisionDetection = true;
             }
             return collisionDetection;
+        }
+        public static void startGame()
+        {
+            Console.WriteLine("Welcome, your objective will be to not crash into the bariers");
+            Thread.Sleep(500);
+            Console.WriteLine("You can control movement by pressing either the left, or right arrow");
+            Thread.Sleep(500);
+            Console.WriteLine("For best expirience, play with sound");
+            Thread.Sleep(500);
+            Console.WriteLine("You will be able to start after Take On Me finishes playing.");
+            Thread.Sleep(500);
+            GameLoop.takeOnMe();
+            Console.WriteLine("Press any key to start...");
+            Console.ReadKey();
+        }
+        public void endgame(int score, Map map1)
+        {
+            Console.SetCursorPosition(0, map1.mapCapacity + 1);
+            Console.WriteLine("You crashed! Your score is "+ score);
+            Thread.Sleep(4000);
+            Console.WriteLine("Uhhh, something is happening");
+            Thread.Sleep(1000);
+            Console.WriteLine("It seems... YOU'RE GETTING RICKROLLED");
+            Thread.Sleep(500);
+            rickroll();
         }
         public static void rickroll()
         {
