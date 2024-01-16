@@ -8,10 +8,9 @@ namespace Game1
 {
     internal class Map
     {
-        public static int mapSize = 128;
-        public char[] mapRow = new char[mapSize]; //size of row
+        public char[] mapRow = new char[Program.mapRowSize]; //size of row
         public static int playableAreaSize = 16; //size of the "road"
-        public int leftBarrierIndex = mapSize / 2 - playableAreaSize / 2; //mapRow.lenght, akorat to tam nemuzu napsat protoze mapRow musi byt static
+        public int leftBarrierIndex = Program.mapRowSize / 2 - playableAreaSize / 2; //mapRow.lenght, akorat to tam nemuzu napsat protoze mapRow musi byt static
         public int mapCapacity = 20;
         public List<char[]> map = new List<char[]>();
         public Random random = new Random();
@@ -112,7 +111,7 @@ namespace Game1
             map.Add(mapRow);
             return (map, leftBarierIndex, playerPosition);
         }
-        public void printMap(List<char[]> map)
+        public void printMap(List<char[]> map, GameLoop gameloop)
         {
             Console.Clear();
             foreach (var tempMapRow in map)
@@ -123,7 +122,8 @@ namespace Game1
                 }
                 Console.WriteLine();
             }
-            Console.ReadKey();
+            Console.SetCursorPosition(gameloop.playerPosition, 0);
+            Console.Write("↓");
         }
     }
 
