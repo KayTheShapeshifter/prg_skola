@@ -11,7 +11,6 @@ namespace Game1
 {
     internal class GameLoop
     {
-        
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int key); //As i understand it, i imported a dll that was written in C++ and now im using it in C#
         public (int, char) playerMovement(int playerPosition, char playerDirection)
@@ -42,9 +41,11 @@ namespace Game1
         }
         public static void startGame()
         {
-            Console.WriteLine("Welcome, your objective will be to not crash into the bariers");
+            Console.WriteLine("Welcome, your objective is to not crash into the barriers");
             Thread.Sleep(500);
-            Console.WriteLine("You can control movement by pressing either the left, or right arrow");
+            Console.WriteLine("You MUST play with the window maximised");
+            Thread.Sleep(500);
+            Console.WriteLine("You can control movement by pressing either the left, or the right arrow");
             Thread.Sleep(500);
             Console.WriteLine("For best expirience, play with sound");
             Thread.Sleep(500);
@@ -54,12 +55,15 @@ namespace Game1
             Console.WriteLine("Press any key to start...");
             Console.ReadKey();
             Console.Beep();
+
+            Console.Clear();
+            Console.SetCursorPosition(0, 0);
         }
         public void endgame(int score, Map map1)
         {
-            Console.SetCursorPosition(0, map1.mapCapacity + 1);
+            Console.SetCursorPosition(0, map1.mapCapacity + score);
             Console.WriteLine("You crashed! Your score is "+ score);
-            Thread.Sleep(4000);
+            Thread.Sleep(3000);
             Console.WriteLine("Uhhh, something is happening");
             Thread.Sleep(1000);
             Console.WriteLine("It seems... YOU'RE GETTING RICKROLLED");

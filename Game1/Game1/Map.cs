@@ -16,7 +16,7 @@ namespace Game1
         public Random random = new Random();
         public int playerPosition = Program.mapRowSize / 2;
         public char playerDirection;
-        public (List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map, int playerPosition, Map map1)
+        public (List<char[]>, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map, Map map1)
         {
             Random random = new Random();
             int tempIndex = 0;
@@ -111,11 +111,35 @@ namespace Game1
                     break;
             }
             map.Add(mapRow);
-            return (map, leftBarierIndex, playerPosition);
+            return (map, leftBarierIndex);
+        }
+        public (List<char[]>, int) initMapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map)
+        {
+            int tempIndex = 0;
+            for (int i = 0; i < leftBarierIndex - 1; i++) //left grass generation
+            {
+                mapRow[tempIndex] = '#';
+                tempIndex++;
+            }
+            mapRow[tempIndex] = '│'; //border gen.
+            tempIndex++;
+            for (int i = 0; i < playableAreaSize; i++) //road gen
+            {
+                mapRow[tempIndex] = ' ';
+                tempIndex++;
+            }
+            mapRow[tempIndex] = '│'; //border gen
+            tempIndex++;
+            for (int i = 0; i < mapRow.Length - (leftBarierIndex + playableAreaSize + 1); i++) //right grass gen
+            {
+                mapRow[tempIndex] = '#';
+                tempIndex++;
+            }
+            map.Add(mapRow);
+            return (map, leftBarierIndex);
         }
         public void printMap(List<char[]> map, Map map1)
         {
-            Console.Clear();
             foreach (var tempMapRow in map)
             {
                 for (int j = 0; j < tempMapRow.Length; j++)
@@ -124,7 +148,12 @@ namespace Game1
                 }
                 Console.WriteLine();
             }
-            Console.SetCursorPosition(map1.playerPosition, 0);
+        }
+        public void printNewRow(List<char[]> map, Map map1, int scoreCounter)
+        {
+            Console.SetCursorPosition(0, scoreCounter + map1.mapCapacity);
+            Console.WriteLine(map[map1.mapCapacity]);
+            Console.SetCursorPosition(map1.playerPosition, scoreCounter);
             Console.Write(map1.playerDirection);
         }
     }
