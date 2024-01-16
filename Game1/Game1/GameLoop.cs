@@ -11,24 +11,24 @@ namespace Game1
 {
     internal class GameLoop
     {
-        public int playerPosition = Program.mapRowSize / 2;
+        
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int key); //As i understand it, i imported a dll that was written in C++ and now im using it in C#
-        public int playerMovement(int playerPosition)
+        public (int, char) playerMovement(int playerPosition, char playerDirection)
         {
-            //char playerDirection = ↓; 
+            playerDirection = '↓'; 
             if ((GetAsyncKeyState(0x25) & 0x8000) > 0) // GetAsyncKeyState returns int, no bool so it has to be > 0 ; left arrow press condition ; https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate
             {
                 playerPosition--;
-                //playerDirection = ↙;
+                playerDirection = '←';
             }
             if ((GetAsyncKeyState(0x27) & 0x8000) > 0) //right arrow ; there is no else, because user can press both right and left arrow at the same time
             {
                 playerPosition++;
-                //playerDirection =↘;
+                playerDirection = '→';
             }
 
-            return playerPosition;
+            return (playerPosition, playerDirection);
         }
         public bool collisionDetection(int playerPosition, List<char[]> map)
         {
@@ -48,11 +48,12 @@ namespace Game1
             Thread.Sleep(500);
             Console.WriteLine("For best expirience, play with sound");
             Thread.Sleep(500);
-            Console.WriteLine("You will be able to start after Take On Me finishes playing.");
+            Console.WriteLine("You will be able to start after the tune finishes playing.");
             Thread.Sleep(500);
             GameLoop.takeOnMe();
             Console.WriteLine("Press any key to start...");
             Console.ReadKey();
+            Console.Beep();
         }
         public void endgame(int score, Map map1)
         {

@@ -17,7 +17,7 @@ namespace Game1
 
         static void Main(string[] args) 
         {
-            GameLoop.startGame();
+            //GameLoop.startGame(); //commented bcs testing
             Map map1 = new Map();
             GameLoop gameLoop = new GameLoop();
             bool varCollisionDetection = false;
@@ -25,18 +25,18 @@ namespace Game1
 
             while (varCollisionDetection == false) //always true now
             {
-                gameLoop.playerPosition = gameLoop.playerMovement(gameLoop.playerPosition);
+                (map1.playerPosition, map1.playerDirection) = gameLoop.playerMovement(map1.playerPosition, map1.playerDirection);
                 while (map1.map.Count <= map1.mapCapacity)
                 {
                     char[] mapRow = new char[128];
-                    var temp = map1.mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, gameLoop.playerPosition, map1);
+                    var temp = map1.mapGeneration(mapRow, map1.leftBarrierIndex, playableAreaSize, map1.map, map1.playerPosition, map1);
                     map1.map = temp.Item1;
                     map1.leftBarrierIndex = temp.Item2;
-                    gameLoop.playerPosition = temp.Item3;
+                    map1.playerPosition = temp.Item3;
                 }
-                map1.printMap(map1.map, gameLoop);
+                map1.printMap(map1.map, map1);
                 map1.map.RemoveAt(0);
-                varCollisionDetection = gameLoop.collisionDetection(gameLoop.playerPosition, map1.map);
+                varCollisionDetection = gameLoop.collisionDetection(map1.playerPosition, map1.map);
                 scoreCounter++;
                 Thread.Sleep(100);
             }

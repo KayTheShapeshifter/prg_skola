@@ -14,6 +14,8 @@ namespace Game1
         public int mapCapacity = 20;
         public List<char[]> map = new List<char[]>();
         public Random random = new Random();
+        public int playerPosition = Program.mapRowSize / 2;
+        public char playerDirection;
         public (List<char[]>, int, int) mapGeneration(char[] mapRow, int leftBarierIndex, int playableAreaSize, List<char[]> map, int playerPosition, Map map1)
         {
             Random random = new Random();
@@ -111,7 +113,7 @@ namespace Game1
             map.Add(mapRow);
             return (map, leftBarierIndex, playerPosition);
         }
-        public void printMap(List<char[]> map, GameLoop gameloop)
+        public void printMap(List<char[]> map, Map map1)
         {
             Console.Clear();
             foreach (var tempMapRow in map)
@@ -122,8 +124,8 @@ namespace Game1
                 }
                 Console.WriteLine();
             }
-            Console.SetCursorPosition(gameloop.playerPosition, 0);
-            Console.Write("↓");
+            Console.SetCursorPosition(map1.playerPosition, 0);
+            Console.Write(map1.playerDirection);
         }
     }
 
