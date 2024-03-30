@@ -12,24 +12,31 @@ namespace PaintApp
 {
     public partial class Form1 : Form
     {
-        Pen pen = Pens.Black;
+        
         public Point prevPoint;
         public bool mouseDown = false;
-        int size = 3;
+        int size = 1;
         Graphics g;
         int brushType = 1;
         static int red = 0;
         static int green = 0;
         static int blue = 0;
-        Brush brush;
-        
-
+        Pen pen;
         public Form1()
         {
             InitializeComponent();
             g = CreateGraphics();
-            brush = Color.FromArgb(1, red, green, blue);
+            InitPen();
+            MessageBox.Show("Vítej u mého velice jednoduchého a pozdě odevzdaného programu Paint. Štětce změníš kliknutím na různé 'brush' tlačítka. Tloušťku změníš bílým sliderem . Barvu změníš barevnými RGB slidery.");
         }
+        public void InitPen()
+        {
+            //SolidBrush brush = new SolidBrush(Color.FromArgb(1, 200, green, blue));
+            Color color = Color.FromArgb(255, red, green, blue);
+            pen = new Pen(color);
+            pen.Width = size;
+        }
+
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -82,6 +89,29 @@ namespace PaintApp
         private void sliderRed_Scroll(object sender, EventArgs e)
         {
             red = sliderRed.Value;
+            labelRed.Text = red.ToString();
+            InitPen();
+        }
+
+        private void sliderGreen_Scroll(object sender, EventArgs e)
+        {
+            green = sliderGreen.Value;
+            labelGreen.Text = green.ToString();
+            InitPen();
+        }
+
+        private void sliderBlue_Scroll(object sender, EventArgs e)
+        {
+            blue = sliderBlue.Value;
+            labelBlue.Text = blue.ToString();
+            InitPen();
+        }
+
+        private void sliderWidth_Scroll(object sender, EventArgs e)
+        {
+            size = sliderWidth.Value;
+            labelWidth.Text = size + "pt";
+            InitPen();
         }
     }
 }
