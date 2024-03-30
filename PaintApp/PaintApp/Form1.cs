@@ -24,6 +24,7 @@ namespace PaintApp
         static int blue = 0;
         Pen pen;
         SolidBrush brush;
+        Pen highlighterPen;
         public Point point;
         public int shapeWidth = 0;
         public int shapeHeight = 0;
@@ -35,7 +36,7 @@ namespace PaintApp
             g = CreateGraphics();
             InitPen();
             this.DoubleBuffered = true;
-            MessageBox.Show("Vítej u mého velice jednoduchého a pozdě odevzdaného programu Paint. Štětce změníš kliknutím na různé 'brush' tlačítka. Tloušťku změníš bílým sliderem . Barvu změníš barevnými RGB slidery.");
+            ShowHelp();
         }
         public void InitPen()
         {
@@ -44,11 +45,27 @@ namespace PaintApp
             pen.Width = size;
 
             brush = new SolidBrush(color);
+
+            Color highlighterColor = Color.FromArgb(80, red, green, blue);
+            highlighterPen = new Pen(highlighterColor);
+            highlighterPen.Width = 14;
         }
-        public void CalculateShapeMiddle()
+        public void CalculateShapeMiddle(bool isCalledFromShape)
         {
             prevPoint = point;
-            point = new Point(point.X - (int)(0.5 * shapeWidth), point.Y - (int)(0.5 * shapeHeight));
+            int tempWidth;
+            int tempHeight;
+            if (isCalledFromShape)
+            {
+                tempWidth = shapeWidth;
+                tempHeight = shapeHeight;
+            }
+            else
+            {
+                tempWidth = size;
+                tempHeight = size;
+            }
+            point = new Point(point.X - (int)(0.5 * tempWidth), point.Y - (int)(0.5 * tempHeight));
         }
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -59,7 +76,7 @@ namespace PaintApp
                     prevPoint = e.Location;
                     break;
                 case 4:
-                    CalculateShapeMiddle();
+                    CalculateShapeMiddle(true);
                     if (fillShape)
                     {
                         g.FillRectangle(brush, point.X, point.Y, shapeWidth, shapeHeight);
@@ -71,7 +88,7 @@ namespace PaintApp
                     point = prevPoint; //entered this because it did shenanigans while double clicking
                     break;
                 case 5:
-                    CalculateShapeMiddle();
+                    CalculateShapeMiddle(true);
                     if (fillShape)
                     {
                         g.FillEllipse(brush, point.X, point.Y, shapeWidth, shapeHeight);
@@ -113,8 +130,17 @@ namespace PaintApp
                 case 3:
                     if (mouseDown)
                     {
+                        CalculateShapeMiddle(false);
                         g.FillRectangle(Brushes.White, point.X, point.Y, size, size); //eraser works by creating many squares when moving mouse
+                        point = prevPoint;
                     }
+                    break;
+                case 6:
+                    if (mouseDown)
+                    {
+                        g.DrawLine(highlighterPen, prevPoint, point);
+                    }
+                    prevPoint = e.Location;
                     break;
                 default:
                     break;
@@ -142,6 +168,10 @@ namespace PaintApp
         private void changeElipse_Click(object sender, EventArgs e)
         {
             brushType = 5;
+        }
+        private void changeHighlighter_Click(object sender, EventArgs e)
+        {
+            brushType = 6;
         }
         private void sliderRed_Scroll(object sender, EventArgs e)
         {
@@ -235,6 +265,20 @@ namespace PaintApp
                 fillShape = true;
                 buttonFillShape.Text = "Fill: Yes";
             }
+        }
+
+        private void buttonEraseCanvas_Click(object sender, EventArgs e)
+        {
+            g.FillRectangle(Brushes.White, 0, 0, 10000, 10000);
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            ShowHelp();
+        }
+        public void ShowHelp()
+        {
+            MessageBox.Show("Vítej u mého velice jednoduchého a pozdě odevzdaného programu Paint. Štětce změníš kliknutím na různé 'brush' tlačítka. Tloušťku změníš bílým sliderem . Barvu změníš barevnými RGB slidery. Pokud chceš vložit tvar, musíš zadat šířku a výšku. Jestli bude tvar vyplněn můžeš změnit kliknutím na tlačítko Fill.");
         }
     }
 }

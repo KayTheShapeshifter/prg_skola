@@ -48,6 +48,9 @@
             this.labelShapeWidth = new System.Windows.Forms.Label();
             this.labelShapeHeight = new System.Windows.Forms.Label();
             this.buttonFillShape = new System.Windows.Forms.Button();
+            this.buttonEraseCanvas = new System.Windows.Forms.Button();
+            this.changeHighlighter = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sliderRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderBlue)).BeginInit();
@@ -57,7 +60,7 @@
             // changeBrush1
             // 
             this.changeBrush1.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.changeBrush1.Location = new System.Drawing.Point(719, 430);
+            this.changeBrush1.Location = new System.Drawing.Point(735, 398);
             this.changeBrush1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeBrush1.Name = "changeBrush1";
             this.changeBrush1.Size = new System.Drawing.Size(112, 35);
@@ -69,7 +72,7 @@
             // changeBrush2
             // 
             this.changeBrush2.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.changeBrush2.Location = new System.Drawing.Point(839, 430);
+            this.changeBrush2.Location = new System.Drawing.Point(855, 398);
             this.changeBrush2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeBrush2.Name = "changeBrush2";
             this.changeBrush2.Size = new System.Drawing.Size(112, 35);
@@ -85,7 +88,7 @@
             this.sliderRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sliderRed.Maximum = 255;
             this.sliderRed.Name = "sliderRed";
-            this.sliderRed.Size = new System.Drawing.Size(339, 69);
+            this.sliderRed.Size = new System.Drawing.Size(355, 69);
             this.sliderRed.TabIndex = 2;
             this.sliderRed.Scroll += new System.EventHandler(this.sliderRed_Scroll);
             // 
@@ -96,9 +99,9 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.No;
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(700, 0);
+            this.button1.Location = new System.Drawing.Point(720, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(560, 700);
+            this.button1.Size = new System.Drawing.Size(580, 700);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -108,7 +111,7 @@
             this.sliderGreen.Location = new System.Drawing.Point(907, 241);
             this.sliderGreen.Maximum = 255;
             this.sliderGreen.Name = "sliderGreen";
-            this.sliderGreen.Size = new System.Drawing.Size(339, 69);
+            this.sliderGreen.Size = new System.Drawing.Size(355, 69);
             this.sliderGreen.TabIndex = 4;
             this.sliderGreen.Scroll += new System.EventHandler(this.sliderGreen_Scroll);
             // 
@@ -118,16 +121,16 @@
             this.sliderBlue.Location = new System.Drawing.Point(907, 321);
             this.sliderBlue.Maximum = 255;
             this.sliderBlue.Name = "sliderBlue";
-            this.sliderBlue.Size = new System.Drawing.Size(339, 69);
+            this.sliderBlue.Size = new System.Drawing.Size(355, 69);
             this.sliderBlue.TabIndex = 5;
             this.sliderBlue.Scroll += new System.EventHandler(this.sliderBlue_Scroll);
             // 
             // sliderWidth
             // 
-            this.sliderWidth.Location = new System.Drawing.Point(907, 25);
+            this.sliderWidth.Location = new System.Drawing.Point(907, 70);
             this.sliderWidth.Minimum = 1;
             this.sliderWidth.Name = "sliderWidth";
-            this.sliderWidth.Size = new System.Drawing.Size(339, 69);
+            this.sliderWidth.Size = new System.Drawing.Size(355, 69);
             this.sliderWidth.TabIndex = 6;
             this.sliderWidth.Value = 1;
             this.sliderWidth.Scroll += new System.EventHandler(this.sliderWidth_Scroll);
@@ -136,7 +139,7 @@
             // 
             this.labelWidth.AutoSize = true;
             this.labelWidth.Font = new System.Drawing.Font("Comic Sans MS", 12F);
-            this.labelWidth.Location = new System.Drawing.Point(833, 25);
+            this.labelWidth.Location = new System.Drawing.Point(833, 70);
             this.labelWidth.Name = "labelWidth";
             this.labelWidth.Size = new System.Drawing.Size(49, 33);
             this.labelWidth.TabIndex = 7;
@@ -176,7 +179,7 @@
             // 
             this.insertImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.insertImage.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.insertImage.Location = new System.Drawing.Point(719, 556);
+            this.insertImage.Location = new System.Drawing.Point(735, 562);
             this.insertImage.Name = "insertImage";
             this.insertImage.Size = new System.Drawing.Size(112, 35);
             this.insertImage.TabIndex = 11;
@@ -187,7 +190,7 @@
             // changeEraser
             // 
             this.changeEraser.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.changeEraser.Location = new System.Drawing.Point(719, 475);
+            this.changeEraser.Location = new System.Drawing.Point(1095, 398);
             this.changeEraser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeEraser.Name = "changeEraser";
             this.changeEraser.Size = new System.Drawing.Size(112, 35);
@@ -199,7 +202,7 @@
             // changeRectangle
             // 
             this.changeRectangle.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.changeRectangle.Location = new System.Drawing.Point(1014, 556);
+            this.changeRectangle.Location = new System.Drawing.Point(735, 605);
             this.changeRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeRectangle.Name = "changeRectangle";
             this.changeRectangle.Size = new System.Drawing.Size(112, 35);
@@ -210,7 +213,7 @@
             // 
             // textboxShapeWidth
             // 
-            this.textboxShapeWidth.Location = new System.Drawing.Point(1146, 599);
+            this.textboxShapeWidth.Location = new System.Drawing.Point(1162, 627);
             this.textboxShapeWidth.Name = "textboxShapeWidth";
             this.textboxShapeWidth.Size = new System.Drawing.Size(100, 26);
             this.textboxShapeWidth.TabIndex = 14;
@@ -219,7 +222,7 @@
             // 
             // textboxShapeHeight
             // 
-            this.textboxShapeHeight.Location = new System.Drawing.Point(1146, 631);
+            this.textboxShapeHeight.Location = new System.Drawing.Point(1162, 659);
             this.textboxShapeHeight.Name = "textboxShapeHeight";
             this.textboxShapeHeight.Size = new System.Drawing.Size(100, 26);
             this.textboxShapeHeight.TabIndex = 15;
@@ -229,7 +232,7 @@
             // changeElipse
             // 
             this.changeElipse.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.changeElipse.Location = new System.Drawing.Point(1134, 556);
+            this.changeElipse.Location = new System.Drawing.Point(735, 650);
             this.changeElipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeElipse.Name = "changeElipse";
             this.changeElipse.Size = new System.Drawing.Size(112, 35);
@@ -242,7 +245,7 @@
             // 
             this.labelShapeWidth.AutoSize = true;
             this.labelShapeWidth.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelShapeWidth.Location = new System.Drawing.Point(1084, 599);
+            this.labelShapeWidth.Location = new System.Drawing.Point(1100, 627);
             this.labelShapeWidth.Name = "labelShapeWidth";
             this.labelShapeWidth.Size = new System.Drawing.Size(56, 23);
             this.labelShapeWidth.TabIndex = 17;
@@ -252,7 +255,7 @@
             // 
             this.labelShapeHeight.AutoSize = true;
             this.labelShapeHeight.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelShapeHeight.Location = new System.Drawing.Point(1084, 634);
+            this.labelShapeHeight.Location = new System.Drawing.Point(1100, 659);
             this.labelShapeHeight.Name = "labelShapeHeight";
             this.labelShapeHeight.Size = new System.Drawing.Size(58, 23);
             this.labelShapeHeight.TabIndex = 18;
@@ -261,7 +264,7 @@
             // buttonFillShape
             // 
             this.buttonFillShape.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonFillShape.Location = new System.Drawing.Point(1134, 662);
+            this.buttonFillShape.Location = new System.Drawing.Point(1150, 584);
             this.buttonFillShape.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonFillShape.Name = "buttonFillShape";
             this.buttonFillShape.Size = new System.Drawing.Size(112, 35);
@@ -270,12 +273,51 @@
             this.buttonFillShape.UseVisualStyleBackColor = true;
             this.buttonFillShape.Click += new System.EventHandler(this.buttonFillShape_Click);
             // 
+            // buttonEraseCanvas
+            // 
+            this.buttonEraseCanvas.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonEraseCanvas.Location = new System.Drawing.Point(735, 14);
+            this.buttonEraseCanvas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonEraseCanvas.Name = "buttonEraseCanvas";
+            this.buttonEraseCanvas.Size = new System.Drawing.Size(112, 35);
+            this.buttonEraseCanvas.TabIndex = 20;
+            this.buttonEraseCanvas.Text = "Erase All";
+            this.buttonEraseCanvas.UseVisualStyleBackColor = true;
+            this.buttonEraseCanvas.Click += new System.EventHandler(this.buttonEraseCanvas_Click);
+            // 
+            // changeHighlighter
+            // 
+            this.changeHighlighter.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.changeHighlighter.Location = new System.Drawing.Point(975, 398);
+            this.changeHighlighter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.changeHighlighter.Name = "changeHighlighter";
+            this.changeHighlighter.Size = new System.Drawing.Size(112, 35);
+            this.changeHighlighter.TabIndex = 21;
+            this.changeHighlighter.Text = "Highlighter";
+            this.changeHighlighter.UseVisualStyleBackColor = true;
+            this.changeHighlighter.Click += new System.EventHandler(this.changeHighlighter_Click);
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonHelp.Location = new System.Drawing.Point(1150, 14);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(112, 35);
+            this.buttonHelp.TabIndex = 22;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.buttonHelp);
+            this.Controls.Add(this.changeHighlighter);
+            this.Controls.Add(this.buttonEraseCanvas);
             this.Controls.Add(this.buttonFillShape);
             this.Controls.Add(this.labelShapeHeight);
             this.Controls.Add(this.labelShapeWidth);
@@ -334,6 +376,9 @@
         private System.Windows.Forms.Label labelShapeWidth;
         private System.Windows.Forms.Label labelShapeHeight;
         private System.Windows.Forms.Button buttonFillShape;
+        private System.Windows.Forms.Button buttonEraseCanvas;
+        private System.Windows.Forms.Button changeHighlighter;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }
 
