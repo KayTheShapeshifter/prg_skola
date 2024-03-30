@@ -39,6 +39,15 @@
             this.labelRed = new System.Windows.Forms.Label();
             this.labelGreen = new System.Windows.Forms.Label();
             this.labelBlue = new System.Windows.Forms.Label();
+            this.insertImage = new System.Windows.Forms.Button();
+            this.changeEraser = new System.Windows.Forms.Button();
+            this.changeRectangle = new System.Windows.Forms.Button();
+            this.textboxShapeWidth = new System.Windows.Forms.TextBox();
+            this.textboxShapeHeight = new System.Windows.Forms.TextBox();
+            this.changeElipse = new System.Windows.Forms.Button();
+            this.labelShapeWidth = new System.Windows.Forms.Label();
+            this.labelShapeHeight = new System.Windows.Forms.Label();
+            this.buttonFillShape = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.sliderRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sliderBlue)).BeginInit();
@@ -47,6 +56,7 @@
             // 
             // changeBrush1
             // 
+            this.changeBrush1.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.changeBrush1.Location = new System.Drawing.Point(719, 430);
             this.changeBrush1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeBrush1.Name = "changeBrush1";
@@ -58,6 +68,7 @@
             // 
             // changeBrush2
             // 
+            this.changeBrush2.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.changeBrush2.Location = new System.Drawing.Point(839, 430);
             this.changeBrush2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changeBrush2.Name = "changeBrush2";
@@ -83,6 +94,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.BackgroundImage = global::PaintApp.Properties.Resources.Screenshot_Videoclip_Never_Gonna_Give_You_Up;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.No;
             this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(700, 0);
             this.button1.Name = "button1";
@@ -160,11 +172,119 @@
             this.labelBlue.TabIndex = 10;
             this.labelBlue.Text = "0";
             // 
+            // insertImage
+            // 
+            this.insertImage.Cursor = System.Windows.Forms.Cursors.Default;
+            this.insertImage.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.insertImage.Location = new System.Drawing.Point(719, 556);
+            this.insertImage.Name = "insertImage";
+            this.insertImage.Size = new System.Drawing.Size(112, 35);
+            this.insertImage.TabIndex = 11;
+            this.insertImage.Text = "Image";
+            this.insertImage.UseVisualStyleBackColor = true;
+            this.insertImage.Click += new System.EventHandler(this.insertImage_Click);
+            // 
+            // changeEraser
+            // 
+            this.changeEraser.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.changeEraser.Location = new System.Drawing.Point(719, 475);
+            this.changeEraser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.changeEraser.Name = "changeEraser";
+            this.changeEraser.Size = new System.Drawing.Size(112, 35);
+            this.changeEraser.TabIndex = 12;
+            this.changeEraser.Text = "Eraser";
+            this.changeEraser.UseVisualStyleBackColor = true;
+            this.changeEraser.Click += new System.EventHandler(this.changeEraser_Click);
+            // 
+            // changeRectangle
+            // 
+            this.changeRectangle.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.changeRectangle.Location = new System.Drawing.Point(1014, 556);
+            this.changeRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.changeRectangle.Name = "changeRectangle";
+            this.changeRectangle.Size = new System.Drawing.Size(112, 35);
+            this.changeRectangle.TabIndex = 13;
+            this.changeRectangle.Text = "Rectangle";
+            this.changeRectangle.UseVisualStyleBackColor = true;
+            this.changeRectangle.Click += new System.EventHandler(this.changeRectangle_Click);
+            // 
+            // textboxShapeWidth
+            // 
+            this.textboxShapeWidth.Location = new System.Drawing.Point(1146, 599);
+            this.textboxShapeWidth.Name = "textboxShapeWidth";
+            this.textboxShapeWidth.Size = new System.Drawing.Size(100, 26);
+            this.textboxShapeWidth.TabIndex = 14;
+            this.textboxShapeWidth.TextChanged += new System.EventHandler(this.textboxShapeWidth_TextChanged);
+            this.textboxShapeWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxShapeWidth_KeyPress);
+            // 
+            // textboxShapeHeight
+            // 
+            this.textboxShapeHeight.Location = new System.Drawing.Point(1146, 631);
+            this.textboxShapeHeight.Name = "textboxShapeHeight";
+            this.textboxShapeHeight.Size = new System.Drawing.Size(100, 26);
+            this.textboxShapeHeight.TabIndex = 15;
+            this.textboxShapeHeight.TextChanged += new System.EventHandler(this.textboxShapeHeight_TextChanged);
+            this.textboxShapeHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textboxShapeHeight_KeyPress);
+            // 
+            // changeElipse
+            // 
+            this.changeElipse.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.changeElipse.Location = new System.Drawing.Point(1134, 556);
+            this.changeElipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.changeElipse.Name = "changeElipse";
+            this.changeElipse.Size = new System.Drawing.Size(112, 35);
+            this.changeElipse.TabIndex = 16;
+            this.changeElipse.Text = "Elipse";
+            this.changeElipse.UseVisualStyleBackColor = true;
+            this.changeElipse.Click += new System.EventHandler(this.changeElipse_Click);
+            // 
+            // labelShapeWidth
+            // 
+            this.labelShapeWidth.AutoSize = true;
+            this.labelShapeWidth.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelShapeWidth.Location = new System.Drawing.Point(1084, 599);
+            this.labelShapeWidth.Name = "labelShapeWidth";
+            this.labelShapeWidth.Size = new System.Drawing.Size(56, 23);
+            this.labelShapeWidth.TabIndex = 17;
+            this.labelShapeWidth.Text = "Width";
+            // 
+            // labelShapeHeight
+            // 
+            this.labelShapeHeight.AutoSize = true;
+            this.labelShapeHeight.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelShapeHeight.Location = new System.Drawing.Point(1084, 634);
+            this.labelShapeHeight.Name = "labelShapeHeight";
+            this.labelShapeHeight.Size = new System.Drawing.Size(58, 23);
+            this.labelShapeHeight.TabIndex = 18;
+            this.labelShapeHeight.Text = "Height";
+            // 
+            // buttonFillShape
+            // 
+            this.buttonFillShape.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonFillShape.Location = new System.Drawing.Point(1134, 662);
+            this.buttonFillShape.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonFillShape.Name = "buttonFillShape";
+            this.buttonFillShape.Size = new System.Drawing.Size(112, 35);
+            this.buttonFillShape.TabIndex = 19;
+            this.buttonFillShape.Text = "Fill: Yes";
+            this.buttonFillShape.UseVisualStyleBackColor = true;
+            this.buttonFillShape.Click += new System.EventHandler(this.buttonFillShape_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.buttonFillShape);
+            this.Controls.Add(this.labelShapeHeight);
+            this.Controls.Add(this.labelShapeWidth);
+            this.Controls.Add(this.changeElipse);
+            this.Controls.Add(this.textboxShapeHeight);
+            this.Controls.Add(this.textboxShapeWidth);
+            this.Controls.Add(this.changeRectangle);
+            this.Controls.Add(this.changeEraser);
+            this.Controls.Add(this.insertImage);
             this.Controls.Add(this.labelBlue);
             this.Controls.Add(this.labelGreen);
             this.Controls.Add(this.labelRed);
@@ -176,6 +296,7 @@
             this.Controls.Add(this.changeBrush2);
             this.Controls.Add(this.changeBrush1);
             this.Controls.Add(this.button1);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -204,6 +325,15 @@
         private System.Windows.Forms.Label labelRed;
         private System.Windows.Forms.Label labelGreen;
         private System.Windows.Forms.Label labelBlue;
+        private System.Windows.Forms.Button insertImage;
+        private System.Windows.Forms.Button changeEraser;
+        private System.Windows.Forms.Button changeRectangle;
+        private System.Windows.Forms.TextBox textboxShapeWidth;
+        private System.Windows.Forms.TextBox textboxShapeHeight;
+        private System.Windows.Forms.Button changeElipse;
+        private System.Windows.Forms.Label labelShapeWidth;
+        private System.Windows.Forms.Label labelShapeHeight;
+        private System.Windows.Forms.Button buttonFillShape;
     }
 }
 
