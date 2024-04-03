@@ -39,6 +39,12 @@ namespace Game1
             }
             return collisionDetection;
         }
+        public int IncreaseDifficulty(int score)
+        {
+            double tempSpeed =  30 / (Math.Log10(score) + 1) ;
+            int speed = Convert.ToInt32(tempSpeed);
+            return speed;
+        }
         public static void startGame()
         {
             Console.WriteLine("Welcome, your objective is to not crash into the barriers");
