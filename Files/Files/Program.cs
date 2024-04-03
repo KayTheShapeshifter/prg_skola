@@ -104,7 +104,11 @@ namespace Files
                 string name;
                 float weight;
                 float height;
-                if (File.Exists("U:\\programovani\\people.txt"))
+
+                Console.WriteLine("Napiš název souboru");
+                string filename =Console.ReadLine();
+                string wholeFilename = ("U:\\programovani\\people" + filename + ".txt");
+                if (File.Exists(wholeFilename))
                 {
                     using (StreamReader reader = new StreamReader("U:\\programovani\\people.txt"))
                     {
@@ -137,10 +141,16 @@ namespace Files
                 string name;
                 float weight;
                 float height;
+                string bigBadMegaCombo;
                 if (File.Exists("U:\\programovani\\people.txt"))
                 {
                     using (StreamReader reader = new StreamReader("U:\\programovani\\people.txt"))
                     {
+                        bigBadMegaCombo = reader.ReadToEnd();
+                        for (int i = 0; i < bigBadMegaCombo.Length; i++)
+                        {
+                            
+                        }
                         name = reader.ReadLine();
                         weight = float.Parse(reader.ReadLine());
                         height = float.Parse(reader.ReadLine());
