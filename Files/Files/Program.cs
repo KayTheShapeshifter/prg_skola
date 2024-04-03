@@ -106,24 +106,26 @@ namespace Files
                 float height;
 
                 Console.WriteLine("Napiš název souboru");
-                string filename =Console.ReadLine();
-                string wholeFilename = ("U:\\programovani\\people" + filename + ".txt");
-                if (File.Exists(wholeFilename))
+                while (true)
                 {
-                    using (StreamReader reader = new StreamReader("U:\\programovani\\people.txt"))
+                    string filename = Console.ReadLine();
+                    string wholeFilename = ("U:\\programovani\\people" + filename + ".txt");
+                    if (File.Exists(wholeFilename))
                     {
-                        name = reader.ReadLine();
-                        weight = float.Parse(reader.ReadLine());
-                        height = float.Parse(reader.ReadLine());
+                        using (StreamReader reader = new StreamReader("U:\\programovani\\people.txt"))
+                        {
+                            name = reader.ReadLine();
+                            weight = float.Parse(reader.ReadLine());
+                            height = float.Parse(reader.ReadLine());
+                        }
+                        return new Person(name, weight, height);
                     }
-                    return new Person(name, weight, height);
-                }
-                else
-                {
-                    Console.WriteLine("git gud napiš validni soubor ");
+                    else
+                    {
+                        Console.WriteLine("git gud napiš validni soubor ve formatu people[jmeno].txt");
+                    }
                 }
 
-                return null;
                     //TODO: Nactete vami ulozene informace z textoveho souboru. Nejdriv se uzivatele zeptejte koho chce nacist a podle toho najdete spravny soubor obsahujici
                     //      chtenou osobu. Nasledne z nej uz jenom prectete informace, vytvore diky nim novou instanci Person a vratte ji
                      // Prepiste tento radek tak, ze v nem budete vracet vytvorenou instanci Person (osobu nactenou ze souboru)
