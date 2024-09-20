@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\3. - 20.9.2024\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb

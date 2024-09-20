@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\bin\Debug\Cykly.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\bin\Debug\Cykly.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\bin\Debug\Cykly.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\obj\Debug\Cykly.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\obj\Debug\Cykly.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\obj\Debug\Cykly.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Cykly\Cykly\obj\Debug\Cykly.pdb
