@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\Calculator\Calculator\obj\Debug\Calculator.pdb
