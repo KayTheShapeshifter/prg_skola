@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 /*
@@ -13,114 +15,175 @@ namespace Calculator
 {
     internal class Program
     {
-        static string ReadOperation(string typ)
+        static void Help()
         {
-            string operace = Console.ReadLine();
+            if (Console.ReadLine() == "help")
+            {
+                Console.WriteLine("Did you really think I was gonna be helpful?????" +
+                    "\nThe instructions later on are quite clear." +
+                    "\n");
+                Thread.Sleep(1000);
+                ProcessStartInfo psi = new ProcessStartInfo(); // credit https://tpforums.org/forum/archive/index.php/t-1524.html and others
+                psi.CreateNoWindow = true;
+                psi.UseShellExecute = true;
+                psi.FileName = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                psi.WindowStyle = ProcessWindowStyle.Hidden;
+                Process.Start(psi);
+            }
+        }
+        static string ReadOperation(string type)
+        {
+            string operation = Console.ReadLine();
             while (true)
             {
-                if (operace == "soucet" || operace == "rozdil" || operace == "nasobeni" || operace == "deleni" || operace == "mocnina" || operace == "odmocnina" || operace == "logaritmus")
+                if (operation == "addition" || operation == "subtraction" || operation == "multiplication" || operation == "division" || operation == "power" || operation == "root" || operation == "logarithm")
                 {
-                    return operace;
+                    return operation;
                 }
                 else
                 {
-                    if (typ == "a")
+                    if (type == "a")
                     {
-                        Console.WriteLine("Chyba: Musíš zadat platnou operaci.");
+                        Console.WriteLine("Never gonna give you up, but you gotta give me a valid operation.");
                         Console.ReadKey();
                         Environment.Exit(1);
                     }
                     else
-                    Console.WriteLine("Špatný input, zadej operaci znovu");
-                    operace = Console.ReadLine();
+                    {
+                        Console.WriteLine("Never gonna let you down, but that input lets me down. Try again!");
+                        operation = Console.ReadLine();
+                    }
                 }
             }
         }
-        static double Calculate(double num1, double num2, string operace) //credit: chatgpt za default a convertnuti else ifů do switche
+        static Dictionary<string, double> Vars()
         {
-            switch (operace)
+            Dictionary<string, double> varPairs = new Dictionary<string, double>();
+            Console.WriteLine("Write the name of the variable. If you want me to give it up type \"stop\", if you want to continue press enter.");
+
+            while (Console.ReadLine() != "stop")
             {
-                case "soucet":
+
+                string key;
+                double value = 0;
+                Console.WriteLine("Never gonna make you cry... IF you give me a name for your custom variable. Cannot be a number.");
+                key = Console.ReadLine();
+                while (Double.TryParse(key, out value) || string.IsNullOrWhiteSpace(key))
+                {
+                    Console.WriteLine("Invalid variable name. It cannot be a number or empty. Please try again.");
+                    key = Console.ReadLine();
+                }
+
+                Console.WriteLine("Write its value.");
+                value = 0;
+                while (!Double.TryParse(Console.ReadLine(), out value))
+                {
+                    Console.WriteLine("Invalid value. Please enter a valid number.");
+                }
+                if (!varPairs.ContainsKey(key))
+                {
+                    varPairs.Add(key, value);
+                }
+                else
+                {
+                    Console.WriteLine("A variable with the same name already exists");
+                }
+                Console.WriteLine("Write the name of the variable. If you want me to give it up type \"stop\", if you want to continue press enter.");
+                if (Console.ReadLine().ToLower() == "stop")
+                {
+                    break;
+                }
+
+            }
+            return varPairs;
+        }
+
+        static double Calculate(double num1, double num2, string operation)
+        {
+            switch (operation)
+            {
+                case "addition":
                     return num1 + num2;
-                case "rozdil":
+                case "subtraction":
                     return num1 - num2;
-                case "nasobeni":
+                case "multiplication":
                     return num1 * num2;
-                case "deleni":
+                case "division":
                     if (num2 != 0)
                     {
                         return num1 / num2;
                     }
                     else
                     {
-                        Console.WriteLine("Chyba: Nelze dělit nulou.");
+                        Console.WriteLine("Never gonna make you cry, but dividing by zero will.");
                         Console.ReadKey();
-                        Environment.Exit(1);
                         return 0;
                     }
-                case "mocnina":
+                case "power":
                     return Math.Pow(num1, num2);
-                case "odmocnina":
+                case "root":
+                    Console.WriteLine("You know the root, but so di I");
                     return Math.Pow(num1, 1 / num2);
-                case "logaritmus":
+                case "logarithm":
                     return Math.Log(num1, num2);
                 default:
-                    Console.WriteLine("Chyba: Neplatná operace.");
-                    return 0; // to return 0 tady je, protoze jinak by to hodilo bug ze ne vzdy to da nejaky cislo, jinak je to useless protoze u operace to uz vyhodi vsechny pripady kde operace neni zadna z naprogramovanejch
+                    Console.WriteLine("Never gonna say goodbye, but this operation isn't right.");
+                    return 0;
             }
         }
 
-        static string prevodSoustavOperation (double result, string typ) //credit chatgpt za prakticky vsechno tady
+        static string ConvertToBase(double result, string type)
         {
-            int cisloSoustavy;
+            int baseNumber;
 
-            Console.WriteLine("Do jaké číselné soustavy chceš převést? \nFungují soustavy od 2 do 36. Napiš pouze číslo. \nNefunguje u velice velkých čísel z důvodu limitací INTu");
+            Console.WriteLine("Your heart's been aching, but you're too shy to say it ... But which base should we use? (2 to 36)");
 
-            string inputCisloSoustavy = Console.ReadLine();
+            string baseInput = Console.ReadLine();
 
-            while (!int.TryParse(inputCisloSoustavy, out cisloSoustavy) || cisloSoustavy > 36 || cisloSoustavy < 2) //limituje to ty bases jen na funkcni (2-36)
+            while (!int.TryParse(baseInput, out baseNumber) || baseNumber > 36 || baseNumber < 2)
             {
-                if (typ == "a")
+                if (type == "a")
                 {
-                    Console.WriteLine("Chyba: Musíš zadat platné číslo soustavy.");
+                    Console.WriteLine("Never gonna run around and desert you, but you gotta give a valid base.");
                     Console.ReadKey();
                     Environment.Exit(1);
                 }
                 else
                 {
-                    Console.WriteLine("Chyba: Musíš zadat platné číslo soustavy.");
-                    Console.WriteLine("Zadej druhé číslo znovu:");
-                    inputCisloSoustavy = Console.ReadLine();
+                    Console.WriteLine("Never gonna tell a lie, but that base is wrong. Try again.");
+                    baseInput = Console.ReadLine();
                 }
             }
-            long celaCastVysledku = (int)result; //konvertuje vysledek na int
-            double desetinnaCastVysledkuDbl = result - celaCastVysledku; //konvertuje desetinnou cast vysledku na double
+
+            long integerPart = (int)result;
+            double fractionalPart = result - integerPart;
 
             StringBuilder resultBuilder = new StringBuilder();
 
-            while (celaCastVysledku > 0)
+            while (integerPart > 0)
             {
-                long digit = celaCastVysledku % cisloSoustavy;
+                long digit = integerPart % baseNumber;
                 char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
                 resultBuilder.Insert(0, digitChar);
-                celaCastVysledku /= cisloSoustavy;
+                integerPart /= baseNumber;
             }
 
-            if (desetinnaCastVysledkuDbl > 0)
+            if (fractionalPart > 0)
             {
-                resultBuilder.Append("."); // Add the decimal point for fractional part.
+                resultBuilder.Append(".");
 
-                for (int i = 0; i < 16; i++) // tady se da upravit, kolik destetinnych mist chci aby to umelo
+                for (int i = 0; i < 16; i++)
                 {
-                    desetinnaCastVysledkuDbl *= cisloSoustavy;
-                    int digit = (int)desetinnaCastVysledkuDbl;
-                    char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10)); // pokud je znak, ktery to prave konvertuje mensi nez 10 tak to ukaze jako cislo, pokud je vetsi tak to ukaze jako pismeno reprezentujici to cislo v jinejch soustavach
+                    fractionalPart *= baseNumber;
+                    int digit = (int)fractionalPart;
+                    char digitChar = (char)((digit < 10) ? ('0' + digit) : ('A' + digit - 10));
                     resultBuilder.Append(digitChar);
-                    desetinnaCastVysledkuDbl -= digit;
+                    fractionalPart -= digit;
                 }
             }
             return resultBuilder.ToString();
         }
+
         static void Main(string[] args)
         {
             double num1;
@@ -128,83 +191,111 @@ namespace Calculator
             double result;
             string input1;
             string input2;
-            string operation;
             string type;
             string runAgain;
             string baseConversion;
             string convertedResult;
+            Dictionary<string, double> vars = new Dictionary<string, double>();
 
-            Console.WriteLine("Zadej, zda li chceš aby se program při špatném vstupu:\na) ukončil \nb) četl do té doby, dokud uživatel nezadá správný imput \nZadej 'a' nebo 'b'.");
+            Console.WriteLine("If you need help, type \"help\". Otherwise press enter.");
+            Help(); 
+
+            Console.WriteLine("A full commitment's what I'm thinking of... but should we:\n" +
+                "a) Quit on bad input \n" +
+                "b) Never let you down and keep asking until it's right? \n" +
+                "Type 'a' or 'b'.");
             type = Console.ReadLine();
-            
-            if (type != "a" & type != "b")
+            while (true) 
             {
-                Console.WriteLine("Chyba: Musíte zadat platný vstup.");
-                Console.ReadKey();
-                Environment.Exit(1); //vypne program
+                if (type != "a" & type != "b")
+                {
+                    Console.WriteLine("Never gonna make you cry, but you gotta give me a valid input.");
+                    Console.ReadKey();
+                }
+                else
+                {
+                    break;
+                }
             }
 
-            do //tohle do-while umoznuje nekolikrat opakovat vypocet
+            do
             {
-                Console.WriteLine("Zadej první číslo");
+                Console.WriteLine("We've known eachother for so long... but do you want to add variables? If so, type \"yes\"");
+                if (Console.ReadLine() == "yes")
+                {
+                    vars = Vars();
+                }
+                Console.WriteLine("We're no strangers to numbers. What's the first one?");
                 input1 = Console.ReadLine();
 
-                while (!double.TryParse(input1, out num1)) //prvni while fce byli od chatgpt, poté jsem si je upravil já
+                while (!double.TryParse(input1, out num1))
                 {
-                    if (type == "a")
+                    if (vars.ContainsKey(input1))
                     {
-                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
+                        num1 = vars[input1];
+                        break;
+                    }
+                    else if (type == "a")
+                    {
+                        Console.WriteLine("Never gonna say goodbye, but that first number's wrong.");
                         Console.ReadKey();
                         Environment.Exit(1);
                     }
                     else if (type == "b")
                     {
-                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro první vstup.");
-                        Console.WriteLine("Zadej první číslo znovu:");
+                        Console.WriteLine("Never gonna tell a lie, but that first number needs to be right. Try again.");
                         input1 = Console.ReadLine();
                     }
                 }
 
-                Console.WriteLine("První číslo je " + input1 + ", nyní zadej druhé");
+                Console.WriteLine("First number is " + num1 + ", now what's the second?");
                 input2 = Console.ReadLine();
 
                 while (!double.TryParse(input2, out num2))
                 {
-                    if (type == "a")
+                    if (vars.ContainsKey(input2))
                     {
-                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
+                        num2 = vars[input2];
+                        break;
+                    }
+                    else if (type == "a")
+                    {
+                        Console.WriteLine("Never gonna make you cry, but that second number ain't it.");
                         Console.ReadKey();
                         Environment.Exit(1);
                     }
                     else if (type == "b")
                     {
-                        Console.WriteLine("Chyba: Musíte zadat platné číslo pro druhý vstup.");
-                        Console.WriteLine("Zadej druhé číslo znovu:");
+                        Console.WriteLine("Never gonna run around, but let's run that second number again.");
                         input2 = Console.ReadLine();
                     }
                 }
 
-                Console.WriteLine("Druhé číslo je " + input2 + ", nyní vyber jednu z operací:\nsoucet, rozdil, nasobeni, deleni, mocnina, odmocnina, logaritmus");
-                operation = ReadOperation(type);
-                result = Calculate(num1, num2, operation);
-                Console.WriteLine("Výsledek je " + result + ".");
+                Console.WriteLine("Second number is " + num2 + ". Now pick an operation: addition, subtraction, multiplication, division, power, root, logarithm");
+                result = Calculate(num1, num2, ReadOperation(type));
 
-                Console.WriteLine("Přeješ si konvertovat výsledek do jiné číselné soustavy? Napiš \"ano\" pokud chceš, jinak odentruj.");
-                baseConversion = Console.ReadLine();
-
-                if (baseConversion == "ano") //logika pro konverzi
+                if (result != 69)
                 {
-                    convertedResult = prevodSoustavOperation(result, type);
-                    Console.WriteLine(convertedResult);
+                    Console.WriteLine("Gotta make you understand... your result is: " + result + ".");
+                }
+                else
+                {
+                    Console.WriteLine("Nice.");
                 }
 
-                Console.WriteLine("Přeješ si udělat nový výpočet? zadej \"ano\" pokuď chceš. Pokuď ne stiskni 2x enter a program se ukončí");
+                Console.WriteLine("Don't tell me you're too blind to see... that a base conversion could give us extacy. If yes, type \"yes\". Otherwise, press enter.");
+                baseConversion = Console.ReadLine();
+
+                if (baseConversion == "yes")
+                {
+                    convertedResult = ConvertToBase(result, type);
+                    Console.WriteLine("Converted result: " + convertedResult);
+                }
+
+                Console.WriteLine("Fancy another calculation? Type \"yes\" to do it all again, or press enter to end.");
                 runAgain = Console.ReadLine();
 
-            } while (runAgain == "ano");
-           
-            Console.ReadKey();
+            } while (runAgain == "yes");
         }
-
     }
 }

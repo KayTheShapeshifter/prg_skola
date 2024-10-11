@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2023-2024\\Calculator\\",
+  "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\CalculatorHW\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{104B0A50-CFFE-444D-8DA9-FB533B802B5A}|Calculator\\Calculator.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2023-2024\\calculator\\calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{104B0A50-CFFE-444D-8DA9-FB533B802B5A}|Calculator\\Calculator.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\calculatorhw\\calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{104B0A50-CFFE-444D-8DA9-FB533B802B5A}|Calculator\\Calculator.csproj|solutionrelative:calculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2023-2024\\Calculator\\Calculator\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\CalculatorHW\\Calculator\\Program.cs",
               "RelativeDocumentMoniker": "Calculator\\Program.cs",
-              "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2023-2024\\Calculator\\Calculator\\Program.cs",
+              "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\CalculatorHW\\Calculator\\Program.cs",
               "RelativeToolTip": "Calculator\\Program.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAiwDoAAAAhAAAA",
+              "ViewState": "AQIAAMMAAAAAAAAAAAAgwCYBAABtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T08:00:09.011Z",
               "EditorCaption": ""

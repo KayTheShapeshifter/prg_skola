@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\bin\Debug\RecursionPlayground.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\bin\Debug\RecursionPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\bin\Debug\RecursionPlayground.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\obj\Debug\RecursionPlayground.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\obj\Debug\RecursionPlayground.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\obj\Debug\RecursionPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\RecursionPlayground\RecursionPlayground\obj\Debug\RecursionPlayground.pdb
