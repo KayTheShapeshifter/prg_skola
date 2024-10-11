@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 /*
  * Made by Jan Borecky for PRG seminar at Gymnazium Voderadska, year 2023-2024.
+ * 
  * Extended by students.
  */
 
@@ -19,7 +20,7 @@ namespace Calculator
         {
             if (Console.ReadLine() == "help")
             {
-                Console.WriteLine("Did you really think I was gonna be helpful?????" +
+                Console.WriteLine("Did you really think I was gonna be helpful???" +
                     "\nThe instructions later on are quite clear." +
                     "\n");
                 Thread.Sleep(1000);
@@ -59,11 +60,9 @@ namespace Calculator
         static Dictionary<string, double> Vars()
         {
             Dictionary<string, double> varPairs = new Dictionary<string, double>();
-            Console.WriteLine("Write the name of the variable. If you want me to give it up type \"stop\", if you want to continue press enter.");
 
-            while (Console.ReadLine() != "stop")
+            do
             {
-
                 string key;
                 double value = 0;
                 Console.WriteLine("Never gonna make you cry... IF you give me a name for your custom variable. Cannot be a number.");
@@ -94,7 +93,7 @@ namespace Calculator
                     break;
                 }
 
-            }
+            } while (Console.ReadLine() != "stop");
             return varPairs;
         }
 
@@ -183,7 +182,6 @@ namespace Calculator
             }
             return resultBuilder.ToString();
         }
-
         static void Main(string[] args)
         {
             double num1;
