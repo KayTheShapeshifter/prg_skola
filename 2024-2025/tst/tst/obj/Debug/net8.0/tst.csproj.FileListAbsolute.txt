@@ -1,0 +1,15 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\bin\Debug\net8.0\tst.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\bin\Debug\net8.0\tst.deps.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\bin\Debug\net8.0\tst.runtimeconfig.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\bin\Debug\net8.0\tst.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\bin\Debug\net8.0\tst.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.AssemblyInfoInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.AssemblyInfo.cs
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.sourcelink.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\refint\tst.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\tst.genruntimeconfig.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\tst\tst\obj\Debug\net8.0\ref\tst.dll

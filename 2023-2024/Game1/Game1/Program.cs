@@ -16,7 +16,7 @@ namespace Game1
         public static int playableAreaSize = 16; //size of the "road"
         static void Main(string[] args) 
         {
-            //GameLoop.startGame();
+            GameLoop.startGame();
             Map map1 = new Map();
             GameLoop gameLoop = new GameLoop();
             bool varCollisionDetection = false;
