@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\12 - 22.11.2024\\2D Array Playground\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC1EBB69-781F-45DC-8B3E-9536BE3AEF0C}|2D Array Playground\\2D Array Playground.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\12 - 22.11.2024\\2d array playground\\2d array playground\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC1EBB69-781F-45DC-8B3E-9536BE3AEF0C}|2D Array Playground\\2D Array Playground.csproj|solutionrelative:2d array playground\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\12 - 22.11.2024\\2D Array Playground\\2D Array Playground\\Program.cs",
+              "RelativeDocumentMoniker": "2D Array Playground\\Program.cs",
+              "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\12 - 22.11.2024\\2D Array Playground\\2D Array Playground\\Program.cs",
+              "RelativeToolTip": "2D Array Playground\\Program.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAE0AAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:14:03.257Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -34,8 +34,10 @@
 
             return directoriesToProcess;
         }
-        public static (string, List<string>, List<string>) InitialiseSaved()
+        public static (string, List<string>) InitialiseSaved(string settingsFileLocation)
         {
+            //first line is directory path, second line is fileExtentionsToRemove, thir
+            StreamReader reader = new StreamReader(settingsFileLocation);
 
 
 
@@ -46,8 +48,7 @@
 
 
 
-
-            return (null, null, null);
+            return (null, null);
         }
         public static List<string> GetFilesForProcessing(string rootDirectory, List<string> fileExtensions)
         {
@@ -86,9 +87,11 @@
         }
         static void Main()
         {
+            string settingsFileLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PhotoFilesSettings.txt"); //path for settings file 
             string directoryPath = @"C:\Users\tobia\Desktop\tst";
             List<string> fileExtensionsRemove = new List<string> {".dng", ".tiff", ".tif" };
             List<string> filesForProcessing;
+            //(directoryPath, fileExtensionsRemove) = InitialiseSaved(settingsFileLocation);
 
             filesForProcessing = GetFilesForProcessing(directoryPath, fileExtensionsRemove);
             RemoveFiles(filesForProcessing);

@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\bin\Debug\2D Array Playground.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\bin\Debug\2D Array Playground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\bin\Debug\2D Array Playground.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\obj\Debug\2D Array Playground.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\obj\Debug\2D Array Playground.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\obj\Debug\2D Array Playground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\12 - 22.11.2024\2D Array Playground\2D Array Playground\obj\Debug\2D Array Playground.pdb

@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\bin\Debug\SortingPlayground.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\bin\Debug\SortingPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\bin\Debug\SortingPlayground.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\obj\Debug\SortingPlayground.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\obj\Debug\SortingPlayground.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\obj\Debug\SortingPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SortingPlayground\SortingPlayground\obj\Debug\SortingPlayground.pdb

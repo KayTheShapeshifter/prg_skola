@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\bin\Debug\SearchPlayground.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\bin\Debug\SearchPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\bin\Debug\SearchPlayground.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\obj\Debug\SearchPlayground.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\obj\Debug\SearchPlayground.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\obj\Debug\SearchPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\SearchPlayground\SearchPlayground\obj\Debug\SearchPlayground.pdb
