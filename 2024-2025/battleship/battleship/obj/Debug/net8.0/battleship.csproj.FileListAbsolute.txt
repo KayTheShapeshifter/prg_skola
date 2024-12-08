@@ -1,0 +1,15 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\bin\Debug\net8.0\battleship.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\bin\Debug\net8.0\battleship.deps.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\bin\Debug\net8.0\battleship.runtimeconfig.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\bin\Debug\net8.0\battleship.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\bin\Debug\net8.0\battleship.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.AssemblyInfoInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.AssemblyInfo.cs
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.sourcelink.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\refint\battleship.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\battleship.genruntimeconfig.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\battleship\battleship\obj\Debug\net8.0\ref\battleship.dll
