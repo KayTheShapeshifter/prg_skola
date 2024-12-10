@@ -5,30 +5,6 @@ namespace battleship
 {
     internal class Program
     {
-        static void PrintMap(char[,] map)
-        {
-            Console.WriteLine("  A B C D E F G H I J");
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write((i + 1).ToString().PadLeft(2)); // Row numbers
-                for (int j = 0; j < 10; j++)
-                {
-                    Console.Write($" {map[i, j]}");
-                }
-                Console.WriteLine();
-            }
-        } 
-        static char[,] InitFill(char[,] map)
-        {
-            for (int i = 0; i < map.GetLength(0); i++)
-            {
-                for (int j = 0; j < map.GetLength(1); j++)
-                {
-                    map[i, j] = 'O';
-                }
-            }
-            return map;
-        }
         static void Main(string[] args)
         {
             char[,] player = new char[10,10];
@@ -51,16 +27,23 @@ namespace battleship
 
             ShipPlacement shipPlacement = new ShipPlacement();
 
-            player = InitFill(player);
-            computer = InitFill(computer);
+            player = ShipPlacement.InitFill(player);
+            computer = ShipPlacement.InitFill(computer);
 
-            PrintMap(player);
-
+            ShipPlacement.PrintMap(player);
+            /*
             for (int i = 0; i < ships.GetLength(1); i++)
             {
                 player = shipPlacement.ShipPlacementFunction(ships[1, i] - '0' , ships[0, i] , player); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
                 PrintMap(player);
+            } */
+            for (int i = 0; i < ships.GetLength(1); i++)
+            {
+                computer = shipPlacement.ShipPlacementFunctionComputer(ships[1, i] - '0', ships[0, i], computer); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
+                Console.WriteLine("Generating computer map, iteration " + (i + 1));
+                ShipPlacement.PrintMap(computer);
             }
+
 
             Console.ReadLine();
 
