@@ -94,10 +94,10 @@ namespace battleship
                     } 
                     else if (Console.ReadLine()?.ToLower() == "RETRY")
                     {
-                        // tady to znova zavola tu fci se stejnyma parametrama
+                        return ShipPlacementFunction(shipLength, shipType, map);
                     }
 
-                    // If we reach here, the ship fits in the selected orientation
+                    // pokud se dostanu sem, tak se to vejde
                     Console.WriteLine($"You selected orientation: {(input == "V" ? "Vertical" : "Horizontal")}");
                     break;
                 }
