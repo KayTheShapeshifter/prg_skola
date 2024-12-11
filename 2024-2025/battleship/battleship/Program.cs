@@ -10,6 +10,8 @@ namespace battleship
             char[,] player = new char[10,10];
             char[,] computer = new char[10, 10];
             char[,] ships = new char[2, 5]; //prvni pozice je typ lodi, druha dylka
+            char[,] computerVisible = new char[10, 10];
+
             ships[0, 0] = 'A'; //aircraft carrier
             ships[1, 0] = '5';
 
@@ -29,14 +31,15 @@ namespace battleship
 
             player = ShipPlacement.InitFill(player);
             computer = ShipPlacement.InitFill(computer);
+            computerVisible = ShipPlacement.InitFill(computerVisible);
 
             ShipPlacement.PrintMap(player);
-            /*
+            
             for (int i = 0; i < ships.GetLength(1); i++)
             {
                 player = shipPlacement.ShipPlacementFunction(ships[1, i] - '0' , ships[0, i] , player); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
-                PrintMap(player);
-            } */
+                ShipPlacement.PrintMap(player);
+            } 
             for (int i = 0; i < ships.GetLength(1); i++)
             {
                 computer = shipPlacement.ShipPlacementFunctionComputer(ships[1, i] - '0', ships[0, i], computer); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)

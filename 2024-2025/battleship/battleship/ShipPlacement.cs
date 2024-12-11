@@ -32,40 +32,65 @@ namespace battleship
             }
             return map;
         }
+        public static (int, bool) SelectRow(char[,] map)
+        {
+            int row = 0;
+            bool success = false;
+            if (int.TryParse(Console.ReadLine(), out row) && row >= 1 && row <= map.GetLength(1)) //je to, co zadava cislo a vejde se mi to tam?
+            {
+                Console.WriteLine($"You selected row {row}");
+                success = true;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, try again.");
+            }
+            return (row, success);
+        }
+        public static (int, bool) SelectCol(char[,] map)
+        {
+            string input;
+            int col = 0;
+            bool success = false;
+            input = Console.ReadLine();
+            if (!string.IsNullOrEmpty(input) && input.Length == 1 && input[0] >= 'A' && input[0] <= map.GetLength(0) + 'A') //jestli se nepletu, tak ono to dokaze s tema cislama pracovat jako kdybychom se nachazeli v jine ciselne soustave
+            {
+                col = input[0] - 'A'; // 0 v zavorkach je proto, ze pristupuju na prvni znak v stringu input... 
+                                           //jinak tohle je logika na konverzi z te "soustavy" tech pismen na ciselnou - jakoby kdyz odectu A tak jdu na normalni desitkovou pak :)
+                Console.WriteLine($"You selected collumn {input}");
+                success = true;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, try again.");
+            }
+            return (col, success);
+
+        }
         public char[,] ShipPlacementFunction(int shipLength, char shipType, char[,] map)
         {
             string input = "";
             char[,] newMap = map;
             int placeRow;
             int placeCol;
+            bool success = false;
 
             while (true)
             {
-                Console.WriteLine($"You are now placing a ship, type {shipType} ({shipLength} x 1). Write a number (1 - 10) for the desired row");
-                if (int.TryParse(Console.ReadLine(), out placeRow) && placeRow >= 1 && placeRow <= 10) //je to, co zadava cislo a vejde se mi to tam?
+                Console.WriteLine($"You are now placing a ship, type {shipType} ({shipLength} x 1). Write a number (1 - {map.GetLength(1)}) for the desired row");
+                (placeRow, success) = SelectRow(map);
+                if (success)
                 {
-                    Console.WriteLine($"You selected row {placeRow}");
                     break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input, try again.");
                 }
             }
             while (true)
             {
-                Console.WriteLine("Write a letter (A - J) for the desired collumn");
-                input = Console.ReadLine();
-                if (!string.IsNullOrEmpty(input) && input.Length == 1 && input[0] >= 'A' && input[0] <= 'J') //jestli se nepletu, tak ono to dokaze s tema cislama pracovat jako kdybychom se nachazeli v jine ciselne soustave
+                Console.WriteLine($"Write a letter (A - {Convert.ToChar(map.GetLength(0) - 1 + 'A')}) for the desired collumn");
+                (placeCol, success) = SelectCol(map);
+                if (success)
                 {
-                    placeCol = input[0] - 'A'; // 0 v zavorkach je proto, ze pristupuju na prvni znak v stringu input... 
-                    //jinak tohle je logika na konverzi z te "soustavy" tech pismen na ciselnou - jakoby kdyz odectu A tak jdu na normalni desitkovou pak :)
-                    Console.WriteLine($"You selected collumn {input} (index {placeRow})");
                     break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input, try again.");
                 }
             }
             while (true)
