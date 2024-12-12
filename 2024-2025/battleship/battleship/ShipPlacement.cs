@@ -172,11 +172,12 @@ namespace battleship
             Random rnd = new Random();
             int rndInt;
 
-            placeRow = rnd.Next(map.GetLength(1));
-            placeCol = rnd.Next(map.GetLength(0)); 
+
 
             while (true)
             {
+                placeRow = rnd.Next(map.GetLength(1));
+                placeCol = rnd.Next(map.GetLength(0));
                 rndInt = rnd.Next(2);
                 if (rndInt == 0) //vertical
                 {

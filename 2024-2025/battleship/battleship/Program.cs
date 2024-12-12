@@ -15,11 +15,6 @@ namespace battleship
             int hitCounterComputer = 0;
             int hitsNeeded = 0;
 
-
-
-
-
-
             ships[0, 0] = 'A'; //aircraft carrier
             ships[1, 0] = '5';
 
