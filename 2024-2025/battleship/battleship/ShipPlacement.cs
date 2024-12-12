@@ -172,15 +172,15 @@ namespace battleship
             Random rnd = new Random();
             int rndInt;
 
-            placeRow = rnd.Next(10);
-            placeCol = rnd.Next(10); 
+            placeRow = rnd.Next(map.GetLength(1));
+            placeCol = rnd.Next(map.GetLength(0)); 
 
             while (true)
             {
                 rndInt = rnd.Next(2);
                 if (rndInt == 0) //vertical
                 {
-                    if (placeRow + shipLength <= 10) // rows zacinaji od 1 ale index od 0
+                    if (placeRow + shipLength <= map.GetLength(1)) // rows zacinaji od 1 ale index od 0
                     {
                         for (int i = 0; i < shipLength; i++)
                         {
@@ -199,7 +199,7 @@ namespace battleship
                 }
                 else if (rndInt == 1)//horizontal
                 {
-                    if (placeCol + shipLength <= 10) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
+                    if (placeCol + shipLength <= map.GetLength(1)) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
                     {
                         for (int i = 0; i < shipLength; i++)
                         {

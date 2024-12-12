@@ -8,7 +8,7 @@ namespace battleship
 {
     internal class GameplayLoop
     {
-        char[,] PlayerTurn(char[,] map, char[,] visibleMap, char[,] ships)
+        public static (char[,], char[,], int) PlayerTurn(char[,] map, char[,] visibleMap, char[,] ships, int hitCounter)
         {
             int row;
             int col;
@@ -35,8 +35,10 @@ namespace battleship
                         break;
                     }
                 }
+                row--;
+
                 tile = map[row, col];
-                if (tile == '×')
+                if (tile == 'ø')
                 {
                     Console.WriteLine("Whoopsie, you already shot there you dummy! Try again.");
                     continue;
@@ -44,23 +46,56 @@ namespace battleship
                 else if (tile == '~')
                 {
                     Console.WriteLine("You missed, git gud");
-                    map[row, col] = '×';
-                    visibleMap[row, col] = '×';
+                    map[row, col] = 'ø';
+                    visibleMap[row, col] = 'ø';
                     break;
                 } 
                 else 
                 {
                     Console.WriteLine($"You hit ship type {tile}");
+                    map[row, col] = '×';
+                    visibleMap[row, col] = '×';
+                    hitCounter++;
+                    break;
+                }
+            }
+            return (map, visibleMap, hitCounter);
+        }
+        public static (char[,], int) ComputerTurn(char[,] map, char[,] ships, int hitCounter)
+        {
+            Random rnd = new Random();
+            int row;
+            int col;
+            char tile;
+
+            while (true)
+            {
+                row = rnd.Next(map.GetLength(1) - 1);
+                col = rnd.Next(map.GetLength(0));
+
+                tile = map[row, col];
+
+                if (tile == 'ø')
+                {
+                    continue;
+                }
+                else if (tile == '~')
+                {
                     map[row, col] = 'ø';
-                    visibleMap[row, col] = 'ø';
+                    Console.WriteLine($"The computer hit water at {row}, {Convert.ToChar(col + 'A')}");
+                    break;
+                }
+                else
+                {
+                    map[row, col] = '×';
+                    Console.WriteLine($"The computer hit you at {row}, {Convert.ToChar(col + 'A')}. Striking ship type {tile}");
+                    hitCounter++;
+                    break;
                 }
             }
             
 
-
-
-
-            return map;
+            return (map, hitCounter);
         }
     }
 }

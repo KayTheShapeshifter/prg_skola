@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\battleship\\battleship\\shipplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|solutionrelative:battleship\\shipplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\battleship\\battleship\\gameplayloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|solutionrelative:battleship\\gameplayloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\battleship\\battleship\\shipplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|solutionrelative:battleship\\shipplacement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{94855B2A-EF7D-4D94-B877-B34266B7A451}|battleship\\battleship.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\battleship\\battleship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +30,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "GameplayLoop.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\battleship\\GameplayLoop.cs",
               "RelativeDocumentMoniker": "battleship\\GameplayLoop.cs",
               "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\battleship\\GameplayLoop.cs",
               "RelativeToolTip": "battleship\\GameplayLoop.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwDoAAAAAAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAA1wEwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T09:05:55.149Z",
               "EditorCaption": ""
@@ -49,20 +49,20 @@
               "RelativeDocumentMoniker": "battleship\\Program.cs",
               "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\battleship\\Program.cs",
               "RelativeToolTip": "battleship\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAASAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAQwEgAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T09:06:52.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ShipPlacement.cs",
               "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\battleship\\ShipPlacement.cs",
               "RelativeDocumentMoniker": "battleship\\ShipPlacement.cs",
               "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\battleship\\battleship\\ShipPlacement.cs",
               "RelativeToolTip": "battleship\\ShipPlacement.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAARAAAA",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAowDwAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T15:29:13.341Z",
               "EditorCaption": ""
