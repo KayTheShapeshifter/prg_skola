@@ -82,13 +82,13 @@ namespace battleship
                 else if (tile == '~')
                 {
                     map[row, col] = 'ø';
-                    Console.WriteLine($"The computer hit water at {row}, {Convert.ToChar(col + 'A')}");
+                    Console.WriteLine($"The computer hit water at {row + 1}, {Convert.ToChar(col + 'A')}");
                     break;
                 }
                 else
                 {
                     map[row, col] = '×';
-                    Console.WriteLine($"The computer hit you at {row}, {Convert.ToChar(col + 'A')}. Striking ship type {tile}");
+                    Console.WriteLine($"The computer hit you at {row + 1}, {Convert.ToChar(col + 'A')}. Striking ship type {tile}");
                     hitCounter++;
                     break;
                 }

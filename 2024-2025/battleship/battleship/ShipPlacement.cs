@@ -176,12 +176,12 @@ namespace battleship
 
             while (true)
             {
-                placeRow = rnd.Next(map.GetLength(1));
-                placeCol = rnd.Next(map.GetLength(0));
+                placeRow = rnd.Next(newMap.GetLength(1));
+                placeCol = rnd.Next(newMap.GetLength(0));
                 rndInt = rnd.Next(2);
                 if (rndInt == 0) //vertical
                 {
-                    if (placeRow + shipLength <= map.GetLength(1)) // rows zacinaji od 1 ale index od 0
+                    if (placeRow + shipLength <= newMap.GetLength(1)) // rows zacinaji od 1 ale index od 0
                     {
                         for (int i = 0; i < shipLength; i++)
                         {
@@ -189,7 +189,7 @@ namespace battleship
                             {
                                 return ShipPlacementFunctionComputer(shipLength, shipType, map); // volam to vsechno znova se stejnyma parametrama
                             }
-                            map[placeRow + i, placeCol] = shipType;
+                            newMap[placeRow + i, placeCol] = shipType;
                         }
                     }
                     else
@@ -200,16 +200,16 @@ namespace battleship
                 }
                 else if (rndInt == 1)//horizontal
                 {
-                    if (placeCol + shipLength <= map.GetLength(1)) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
+                    if (placeCol + shipLength <= newMap.GetLength(1)) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
                     {
                         for (int i = 0; i < shipLength; i++)
                         {
-                            if (map[placeRow, placeCol + i] != '~')
+                            if (newMap[placeRow, placeCol + i] != '~')
                             {
                                 //overlaps with another ship
                                 return ShipPlacementFunctionComputer(shipLength, shipType, map);
                             }
-                            map[placeRow, placeCol + i] = shipType;
+                            newMap[placeRow, placeCol + i] = shipType;
                         }
                     }
                     else
