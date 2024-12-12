@@ -97,7 +97,7 @@ namespace battleship
             {
                 Console.WriteLine("You have now selected the top left anchor for the ship. Write V for vertical or H for horizontal. Type retry to try to place the ship again");
                 input = Console.ReadLine()?.ToUpper();
-                if (input == "V" || input == "H")
+                if (input == "V" || input == "H" || input == "RETRY")
                 {
                     if (input == "V")
                     {
@@ -141,7 +141,7 @@ namespace battleship
                             continue;
                         }
                     } 
-                    else if (Console.ReadLine()?.ToLower() == "RETRY")
+                    else if (input == "RETRY")
                     {
                         return ShipPlacementFunction(shipLength, shipType, map);
                     }

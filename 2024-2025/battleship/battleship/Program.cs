@@ -44,7 +44,7 @@ namespace battleship
             
             for (int i = 0; i < ships.GetLength(1); i++)
             {
-                player = shipPlacement.ShipPlacementFunctionComputer(ships[1, i] - '0' , ships[0, i] , player); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
+                player = shipPlacement.ShipPlacementFunction(ships[1, i] - '0' , ships[0, i] , player); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
                 //źmenit tu fci, jen se mi porad nechce zadavat souradnice
                 ShipPlacement.PrintMap(player);
             } 
@@ -52,21 +52,24 @@ namespace battleship
             {
                 computer = shipPlacement.ShipPlacementFunctionComputer(ships[1, i] - '0', ships[0, i], computer); //to minus 0 tam je, protoze konvertuju z ASCII cisel, ktere maji ruzne hodnoty od tech actual cisel - odectu nulu a protoze ASCII je sekvencni tak jsem na psravnych cislech :)
                 Console.WriteLine("Generating computer map, iteration " + (i + 1));
-                ShipPlacement.PrintMap(computer);
+                //ShipPlacement.PrintMap(computer);
             }
 
             while (true)
             {
                 (computer, computerVisible, hitCounterPlayer) = GameplayLoop.PlayerTurn(computer, computerVisible, ships, hitCounterPlayer);
-                ShipPlacement.PrintMap(computer);
+                //hipPlacement.PrintMap(computer);
                 ShipPlacement.PrintMap(computerVisible);
+                Thread.Sleep(500);
                 if (hitCounterPlayer >= hitsNeeded)
                 {
                     Console.WriteLine("Player won.");
                     break;
                 }
                 (player, hitCounterComputer) = GameplayLoop.ComputerTurn(player, ships, hitCounterComputer);
+                Thread.Sleep(500);
                 ShipPlacement.PrintMap(player);
+                Thread.Sleep(500);
                 if (hitCounterComputer >= hitsNeeded)
                 {
                     Console.WriteLine("Computer won.");
