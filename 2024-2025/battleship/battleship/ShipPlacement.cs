@@ -8,13 +8,30 @@ namespace battleship
 {
     internal class ShipPlacement
     {
+        public static bool AskForShip(string shipDescription)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Do you want to play with {shipDescription} (y/n)?");
+                string input = Console.ReadLine()?.ToLower();
+                if (input == "y") return true;
+                if (input == "n") return false;
+
+                Console.WriteLine("Invalid input, please enter 'y' or 'n'.");
+            }
+        }
         public static void PrintMap(char[,] map)
         {
-            Console.WriteLine("   A B C D E F G H I J");
-            for (int i = 0; i < 10; i++)
+            Console.Write("  "); //padding
+            for (int i = 0; i < map.GetLength(0); i++)
             {
-                Console.Write((i + 1).ToString().PadLeft(2)); // Row numbers
-                for (int j = 0; j < 10; j++)
+                Console.Write($" {(char)('A' + i)}");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                Console.Write((i + 1).ToString().PadLeft(2)); // pad dela to, aby se vsechno krasne alignovalo
+                for (int j = 0; j < map.GetLength(1); j++)
                 {
                     Console.Write($" {map[i, j]}");
                 }
@@ -101,7 +118,7 @@ namespace battleship
                 {
                     if (input == "V")
                     {
-                        if (placeRow - 1 + shipLength <= 10) // rows zacinaji od 1 ale index od 0
+                        if (placeRow - 1 + shipLength <= map.GetLength(0)) // rows zacinaji od 1 ale index od 0
                         {
                             Console.WriteLine("The ship fits vertically.");
                             for (int i = 0; i < shipLength; i++)
@@ -122,7 +139,7 @@ namespace battleship
                     }
                     else if (input == "H")
                     {
-                        if (placeCol + shipLength <= 10) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
+                        if (placeCol + shipLength <= map.GetLength(0)) // tady ale uz indexy zacinaji na 0 protoze to konvertuju z pismen
                         {
                             Console.WriteLine("The ship fits horizontally.");
                             for (int i = 0; i < shipLength; i++)
@@ -157,12 +174,8 @@ namespace battleship
             }
 
 
-
-
             return newMap;
         }
-
-
         public char[,] ShipPlacementFunctionComputer(int shipLength, char shipType, char[,] map)
         {
             char[,] newMap = map;
