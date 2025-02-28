@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\17 - 17.1.2025\\ClassPlayground\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC2498C-AB07-45FD-86B1-B71838A591C4}|ClassPlayground\\ClassPlayground.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\17 - 17.1.2025\\classplayground\\classplayground\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AC2498C-AB07-45FD-86B1-B71838A591C4}|ClassPlayground\\ClassPlayground.csproj|solutionrelative:classplayground\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC2498C-AB07-45FD-86B1-B71838A591C4}|ClassPlayground\\ClassPlayground.csproj|c:\\users\\tobia\\documents\\github\\prg_skola\\2024-2025\\17 - 17.1.2025\\classplayground\\classplayground\\bankacc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AC2498C-AB07-45FD-86B1-B71838A591C4}|ClassPlayground\\ClassPlayground.csproj|solutionrelative:classplayground\\bankacc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BankAcc.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\17 - 17.1.2025\\ClassPlayground\\ClassPlayground\\BankAcc.cs",
+              "RelativeDocumentMoniker": "ClassPlayground\\BankAcc.cs",
+              "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\17 - 17.1.2025\\ClassPlayground\\ClassPlayground\\BankAcc.cs",
+              "RelativeToolTip": "ClassPlayground\\BankAcc.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T09:21:48.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\17 - 17.1.2025\\ClassPlayground\\ClassPlayground\\Program.cs",
+              "RelativeDocumentMoniker": "ClassPlayground\\Program.cs",
+              "ToolTip": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\17 - 17.1.2025\\ClassPlayground\\ClassPlayground\\Program.cs",
+              "RelativeToolTip": "ClassPlayground\\Program.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T09:14:39.468Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\bin\Debug\ClassPlayground.exe.config
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\bin\Debug\ClassPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\bin\Debug\ClassPlayground.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\obj\Debug\ClassPlayground.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\obj\Debug\ClassPlayground.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\obj\Debug\ClassPlayground.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\17 - 17.1.2025\ClassPlayground\ClassPlayground\obj\Debug\ClassPlayground.pdb

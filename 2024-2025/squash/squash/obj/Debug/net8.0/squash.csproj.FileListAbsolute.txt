@@ -1,0 +1,15 @@
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\bin\Debug\net8.0\squash.exe
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\bin\Debug\net8.0\squash.deps.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\bin\Debug\net8.0\squash.runtimeconfig.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\bin\Debug\net8.0\squash.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\bin\Debug\net8.0\squash.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.AssemblyInfoInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.AssemblyInfo.cs
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.sourcelink.json
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\refint\squash.dll
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.pdb
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\squash.genruntimeconfig.cache
+C:\Users\tobia\Documents\GitHub\prg_skola\2024-2025\squash\squash\obj\Debug\net8.0\ref\squash.dll
