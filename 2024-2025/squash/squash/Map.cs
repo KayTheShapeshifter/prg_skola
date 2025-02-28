@@ -28,6 +28,14 @@ namespace squash
                 map[0, i] = '-';
                 map[map.GetLength(0) - 1, i] = '-';
             }
+            for (int i = 0; i < 6; i++)
+            {
+                map[0, map.GetLength(1) - 1 - i] = '#';
+                map[map.GetLength(0) - 1, map.GetLength(1) - 1 - i] = '#';
+                map[i, map.GetLength(1) - 1] = '#';
+                map[map.GetLength(0) - 1 - i, map.GetLength(1) - 1] = '#';
+            }
+
 
             return map;
         }
