@@ -65,7 +65,6 @@ namespace squash
         public (int, char, char[,]) PlayerMovement(int playerPosition, int playerLength, char[,] map)
         {
             char playerDirection = '|';
-            bool movedThisTurn = false;
 
             //move up
             if ((GetAsyncKeyState(0x57) & 0x8000) > 0 && playerPosition > 1)
@@ -73,7 +72,6 @@ namespace squash
                 map[playerPosition + playerLength, 0] = ' ';
                 playerPosition--;
                 playerDirection = '↑';
-                movedThisTurn = true;
                 map[playerPosition, 0] = '|';
 
             }
@@ -83,7 +81,6 @@ namespace squash
                 map[playerPosition, 0] = ' ';
                 playerPosition++;
                 playerDirection = '↓';
-                movedThisTurn = true;
                 map[playerPosition + playerLength, 0] = '|';
             }
             return (playerPosition, playerDirection, map);

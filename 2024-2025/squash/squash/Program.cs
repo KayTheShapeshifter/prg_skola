@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -24,14 +25,7 @@ namespace squash
             int turnCounter = 1;
             Ball ball = new Ball();
             bool lost;
-            /*
-            while (true)
-            {
-                (player.position, player.direction, player.movedLastTurn) = player.PlayerMovement(player.position, player.length, map, player.movedLastTurn);
-
-                Thread.Sleep(100);
-            }
-            */
+            
             while (true)
             {
                 int oldPosition = player.position;
@@ -62,10 +56,24 @@ namespace squash
                 }
 
                 turnCounter++;
-                Thread.Sleep(20);
+                Thread.Sleep(15);
             }
 
 
+            Thread.Sleep(500);
+
+            Console.WriteLine("You lost. Final score " + (turnCounter - 1));
+
+            Thread.Sleep(500);
+
+            ProcessStartInfo psi = new ProcessStartInfo(); // credit https://tpforums.org/forum/archive/index.php/t-1524.html and others
+            psi.CreateNoWindow = true;
+            psi.UseShellExecute = true;
+            psi.FileName = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            psi.WindowStyle = ProcessWindowStyle.Hidden;
+            Process.Start(psi);
+
+            Console.ReadKey();
         }
     }
 }
