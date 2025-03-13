@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("squash")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09881dd321a0c4f5090ef782945872cdf339e8c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9116a5555dceeb2bbfe433bf1d6188783d288769")]
 [assembly: System.Reflection.AssemblyProductAttribute("squash")]
 [assembly: System.Reflection.AssemblyTitleAttribute("squash")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
