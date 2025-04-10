@@ -1,0 +1,10 @@
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\bin\Debug\PaintApp.exe.config
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\bin\Debug\PaintApp.exe
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\bin\Debug\PaintApp.pdb
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.csproj.AssemblyReference.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.Form1.resources
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.Properties.Resources.resources
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.csproj.GenerateResource.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.exe
+C:\Users\tobia\Documents\prg_skola\2024-2025\PaintApp\PaintApp\obj\Debug\PaintApp.pdb

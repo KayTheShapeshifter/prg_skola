@@ -1,0 +1,17 @@
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\bin\Debug\net8.0-windows\hratky s formama.exe
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\bin\Debug\net8.0-windows\hratky s formama.deps.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\bin\Debug\net8.0-windows\hratky s formama.runtimeconfig.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\bin\Debug\net8.0-windows\hratky s formama.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\bin\Debug\net8.0-windows\hratky s formama.pdb
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky_s_formama.Form1.resources
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.csproj.GenerateResource.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.AssemblyInfoInputs.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.AssemblyInfo.cs
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.sourcelink.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\refint\hratky s formama.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.pdb
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\hratky s formama.genruntimeconfig.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\hratky s formama\hratky s formama\obj\Debug\net8.0-windows\ref\hratky s formama.dll

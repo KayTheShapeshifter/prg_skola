@@ -1,0 +1,17 @@
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\bin\Debug\net9.0-windows\Paint.exe
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\bin\Debug\net9.0-windows\Paint.deps.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\bin\Debug\net9.0-windows\Paint.runtimeconfig.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\bin\Debug\net9.0-windows\Paint.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\bin\Debug\net9.0-windows\Paint.pdb
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.Form1.resources
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.csproj.GenerateResource.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.AssemblyInfoInputs.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.AssemblyInfo.cs
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.sourcelink.json
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\refint\Paint.dll
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.pdb
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\Paint.genruntimeconfig.cache
+C:\Users\tobia\Documents\prg_skola\2024-2025\Paint\Paint\obj\Debug\net9.0-windows\ref\Paint.dll
