@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel_Controls = new Panel();
+            button2 = new Button();
+            button_Save = new Button();
             button_EllipseOutline = new Button();
             button_RectangleOutline = new Button();
             button_Ellipse = new Button();
@@ -45,16 +47,14 @@
             button_Clear = new Button();
             button_Undo = new Button();
             panel_Canvas = new Panel();
-            button_Save = new Button();
-            button2 = new Button();
             panel_Controls.SuspendLayout();
             SuspendLayout();
             // 
             // panel_Controls
             // 
             panel_Controls.BackColor = Color.FromArgb(224, 224, 224);
-            panel_Controls.Controls.Add(button2);
             panel_Controls.Controls.Add(button_Save);
+            panel_Controls.Controls.Add(button2);
             panel_Controls.Controls.Add(button_EllipseOutline);
             panel_Controls.Controls.Add(button_RectangleOutline);
             panel_Controls.Controls.Add(button_Ellipse);
@@ -74,6 +74,27 @@
             panel_Controls.Name = "panel_Controls";
             panel_Controls.Size = new Size(1872, 143);
             panel_Controls.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button2.Location = new Point(1658, 72);
+            button2.Name = "button2";
+            button2.Size = new Size(81, 68);
+            button2.TabIndex = 19;
+            button2.Text = "📂";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button_Save
+            // 
+            button_Save.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            button_Save.Location = new Point(1658, 2);
+            button_Save.Name = "button_Save";
+            button_Save.Size = new Size(81, 68);
+            button_Save.TabIndex = 18;
+            button_Save.Text = "💾";
+            button_Save.UseVisualStyleBackColor = true;
+            button_Save.Click += button_Save_Click;
             // 
             // button_EllipseOutline
             // 
@@ -256,27 +277,6 @@
             panel_Canvas.MouseDown += panel_Canvas_MouseDown;
             panel_Canvas.MouseMove += panel_Canvas_MouseMove;
             panel_Canvas.MouseUp += panel_Canvas_MouseUp;
-            // 
-            // button_Save
-            // 
-            button_Save.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            button_Save.Location = new Point(1662, 3);
-            button_Save.Name = "button_Save";
-            button_Save.Size = new Size(81, 68);
-            button_Save.TabIndex = 18;
-            button_Save.Text = "💾";
-            button_Save.UseVisualStyleBackColor = true;
-            button_Save.Click += button_Save_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            button2.Location = new Point(1662, 72);
-            button2.Name = "button2";
-            button2.Size = new Size(81, 68);
-            button2.TabIndex = 19;
-            button2.Text = "📂";
-            button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

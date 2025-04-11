@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj": {}
+    "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj": {
+    "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj",
+        "projectUniqueName": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj",
         "projectName": "PhotoFiles",
-        "projectPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj",
+        "projectPath": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\PhotoFiles.csproj",
         "packagesPath": "C:\\Users\\tobia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tobia\\Documents\\GitHub\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\obj\\",
+        "outputPath": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\PhotoFiles\\PhotoFiles\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -64,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

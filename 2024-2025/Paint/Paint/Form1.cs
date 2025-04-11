@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
-
+using Microsoft.VisualBasic.FileIO;
 namespace Paint
 {
     public partial class Form1 : Form //napsal jsem vetsinu sam a po tom, co jsem delal funkce na rectangle tak se mi nechtelo delat ellipse, tak jsem to vzal z chatgpt - proto velice AI formatovani
@@ -492,7 +491,6 @@ namespace Paint
 
         private void button_Save_Click(object sender, EventArgs e)
         {
-            string selectedPath = "";
             using (FolderBrowserDialog dialog = new FolderBrowserDialog()) //internet :)
             {
                 dialog.Description = "Select a folder";
@@ -503,6 +501,8 @@ namespace Paint
                     string filePath = Path.Combine(dialog.SelectedPath, "paint.txt");
                     try
                     {
+                        FileSystem.DeleteFile(filePath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+
                         foreach (var line in storedLines)
                         {
                             string lineData = string.Join(",", line.Select(p => $"{p.X},{p.Y}"));
