@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\7. otazka\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{91A1DAB7-F57D-490A-83CA-D326A9B1E9F6}|7. otazka\\7. otazka.csproj|c:\\users\\tobia\\documents\\prg_skola\\2024-2025\\7. otazka\\7. otazka\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91A1DAB7-F57D-490A-83CA-D326A9B1E9F6}|7. otazka\\7. otazka.csproj|solutionrelative:7. otazka\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\7. otazka\\7. otazka\\Program.cs",
+              "RelativeDocumentMoniker": "7. otazka\\Program.cs",
+              "ToolTip": "C:\\Users\\tobia\\Documents\\prg_skola\\2024-2025\\7. otazka\\7. otazka\\Program.cs",
+              "RelativeToolTip": "7. otazka\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:57:16.553Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
